@@ -7,13 +7,13 @@ about:
   links: 
     - icon: linkedin
       text: LinkedIn
-      href: https://www.linkedin.com/in/ramon-melser-666932129/
+      href: https://www.linkedin.com/in/aidan-rankin-bb5949244/
     - icon: twitter
       text: Twitter/X
-      href: https://x.com/MelserRamon
+      href: none
     - icon: github
       text: GitHub
-      href: https://github.com/ramonmelser
+      href: https://github.com/rankinav
     - icon: envelope-at
       text: Email
       href: mailto:melser@student.ubc.ca
