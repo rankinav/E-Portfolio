@@ -48,12 +48,8 @@ def calc_ndvi(nir, red):
 ```
 :::
 
-## External links
-
-You can also provide a frame linking to external websites. For example, here is a link to a Google Earth Engine application I developed. The full-screen GEE application is available [here](https://ee-melserramon.projects.earthengine.app/view/thermal-analysis-tool) in case you're interested.
-
-(To use the GEE tool, navigate to any city you'd like, hit apply filters, and click anywhere on the map to retrieve a time-series of Landsat surface temperature observations for that point. Areas where the maximum temp exceeded 35 degrees Celsius in your date-range are highlighted in red.)
+## Web maps
 
 ```{=html}
-<iframe width="900" height="700" src="https://ee-melserramon.projects.earthengine.app/view/thermal-analysis-tool" title="Webpage example"></iframe>
+<iframe width="900" height="700" src="https://utoronto.maps.arcgis.com/apps/View/index.html?appid=afe58019bf384ded937c2943d20261b8" title="Lost Rivers Demo"></iframe>
 ```
