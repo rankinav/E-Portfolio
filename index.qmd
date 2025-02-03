@@ -8,15 +8,12 @@ about:
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/aidan-rankin-bb5949244/
-    - icon: twitter
-      text: Twitter/X
-      href: none
     - icon: github
       text: GitHub
       href: https://github.com/rankinav
     - icon: envelope-at
       text: Email
-      href: mailto:melser@student.ubc.ca
+      href: mailto:rankina001@gmail.com
 ---
 
 Hey there,

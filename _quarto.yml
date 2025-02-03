@@ -4,14 +4,13 @@ project:
 
 website:
   title: "Your E-Portfolio"
+  theme: jekyll-theme-cayman
   navbar:
     left:
       - href: index.qmd
         text: Home
       - href: resume.qmd
         text: Resume
-      - href: publications.qmd
-        text: Publications
       - href: content.qmd
         text: Content & Deliverables
 
