@@ -4,14 +4,14 @@
     "href": "index.html",
     "title": "Your E-Portfolio",
     "section": "",
-    "text": "Hey there,\nThis is where my E-Portfolio landing page will be in the near future"
+    "text": "I’m"
   },
   {
     "objectID": "resume.html",
     "href": "resume.html",
     "title": "Resume",
     "section": "",
-    "text": "Education\n\nhB.Sc, Biodiversity and Conservation Biology. University of Toronto. 2023.\nMGEM, Geomatics for Environmental Management. University of British Columbia. 2025.\n\n\n\nPublications\nPeer-reviewed publications:\n\nList any peer-reviewed publications here.\n\nReports:\n\nList any non-peer reviewed materials you’d like to share here.\n\n\n\nConferences & Talks\nInvited Talks\n\nIf you’ve been invited to speak in a professional setting, list that here.\n\nConference Presentations\n\nIf the presentation was at a conference, list them here.\n\n\n\nAwards & Honors\n\nList any scholarships, bursaries, etc.\n\n\n\nTeaching Assistantships\n\nList any TA positions you may have held.\n\n\n\nInstitutional Service\n\nVolunteering etc."
+    "text": "Education\nHonours Bachelor of Science, Biodiversity and Conservation Biology.\nUniversity of Toronto. 2023.\n\nMinors - Geographic Information Systems, Philosophy\nRelevant coursework:\n\n\n\n\nMaster of Geomatics for Environmental Management.\nUniversity of British Columbia. 2025.\n\n\nWork Experience\nGIS Library Assistant\nUniversity of Toronto Map and Data Library, May 2022-October 2023\n\nAssisted with special GIS projects\nPrepared geospatial data, including digitizing and georeferencing historical maps\nProduced web maps for presentation and display\n\nReports:\n\nList any non-peer reviewed materials you’d like to share here.\n\n\n\nConferences & Talks\nInvited Talks\n\nIf you’ve been invited to speak in a professional setting, list that here.\n\nConference Presentations\n\nIf the presentation was at a conference, list them here.\n\n\n\nAwards & Honors\n\nList any scholarships, bursaries, etc.\n\n\n\nTeaching Assistantships\n\nList any TA positions you may have held.\n\n\n\nInstitutional Service\n\nVolunteering etc."
   },
   {
     "objectID": "publications.html",
@@ -32,7 +32,7 @@
     "href": "content.html",
     "title": "Content & Deliverables",
     "section": "",
-    "text": "This is a sample page where you can archive project deliverables. Every header you use will correspond to a tab in the legend - shown on the right-hand side of your screen (“On this page”).\nIf you’ve produced any GIS layers for your 599 project, this may be a good place to share them as interactive maps through leaflet. Alternatively, you can upload high-res figures showing correlations, box-plots, etc. from your report here, and provide a brief overview of key project results. If you have written some useful functions, you may also want to share those here to demonstrate proficiency in particular coding languages or synergies between notable coding packages.\n\n\nSample leaflet - for detailed leaflet instructions, visit the FCOR 599 workshop archive page here.\n\n\n\n\n\n\n\n\n\nSample code snippet. Notice that you can provide a toggle to switch between coding languages - this is referred to as a ‘tabset’ in quarto. It is good practice to try and convert your R code to python, and vice-versa to demonstrate coding proficiency. For example, let’s showcase a function for calculating NDVI in R and Python.\n\nRPython\n\n\ncalc_ndvi &lt;- function(nir, red){ ndvi &lt;- (nir-red)/(nir+red) return(ndvi) }\n\n\ndef calc_ndvi(nir, red): \n  ndvi = (nir.astype(float)-red.astype(float))/(nir.astype(float)+red.astype(float))\n  return(ndvi)\n\n\n\n\n\n\nYou can also provide a frame linking to external websites. For example, here is a link to a Google Earth Engine application I developed. The full-screen GEE application is available here in case you’re interested.\n(To use the GEE tool, navigate to any city you’d like, hit apply filters, and click anywhere on the map to retrieve a time-series of Landsat surface temperature observations for that point. Areas where the maximum temp exceeded 35 degrees Celsius in your date-range are highlighted in red.)"
+    "text": "This is a sample page where you can archive project deliverables. Every header you use will correspond to a tab in the legend - shown on the right-hand side of your screen (“On this page”).\nIf you’ve produced any GIS layers for your 599 project, this may be a good place to share them as interactive maps through leaflet. Alternatively, you can upload high-res figures showing correlations, box-plots, etc. from your report here, and provide a brief overview of key project results. If you have written some useful functions, you may also want to share those here to demonstrate proficiency in particular coding languages or synergies between notable coding packages.\n\n\nSample leaflet - for detailed leaflet instructions, visit the FCOR 599 workshop archive page here.\n\n\n\n\n\n\n\n\n\nSample code snippet. Notice that you can provide a toggle to switch between coding languages - this is referred to as a ‘tabset’ in quarto. It is good practice to try and convert your R code to python, and vice-versa to demonstrate coding proficiency. For example, let’s showcase a function for calculating NDVI in R and Python.\n\nRPython\n\n\ncalc_ndvi &lt;- function(nir, red){ ndvi &lt;- (nir-red)/(nir+red) return(ndvi) }\n\n\ndef calc_ndvi(nir, red): \n  ndvi = (nir.astype(float)-red.astype(float))/(nir.astype(float)+red.astype(float))\n  return(ndvi)\n\n\n\n\n\n\n\n\n\n\nIncreased impermeable surface cover increases runoff and temperatures in urban streams with ecological implications. Analysis of impermeable surface area at sites in Toronto region watersheds was carried out to test the relevance of this relationship. Surface impermeability is correlated with mean stream temperature at large scales, but minimum and maximum temperatures display no relationship. This may be due to the homogeneous urban landscape, the impact of cool water entering upstream at headwaters, or other physical characteristics of urban streams."
   },
   {
     "objectID": "content.html#leaflet",
@@ -54,5 +54,12 @@
     "title": "Content & Deliverables",
     "section": "",
     "text": "You can also provide a frame linking to external websites. For example, here is a link to a Google Earth Engine application I developed. The full-screen GEE application is available here in case you’re interested.\n(To use the GEE tool, navigate to any city you’d like, hit apply filters, and click anywhere on the map to retrieve a time-series of Landsat surface temperature observations for that point. Areas where the maximum temp exceeded 35 degrees Celsius in your date-range are highlighted in red.)"
+  },
+  {
+    "objectID": "content.html#urban-ecology-stream-temperature-as-a-function-of-impermeable-land-cover",
+    "href": "content.html#urban-ecology-stream-temperature-as-a-function-of-impermeable-land-cover",
+    "title": "Content & Deliverables",
+    "section": "",
+    "text": "Increased impermeable surface cover increases runoff and temperatures in urban streams with ecological implications. Analysis of impermeable surface area at sites in Toronto region watersheds was carried out to test the relevance of this relationship. Surface impermeability is correlated with mean stream temperature at large scales, but minimum and maximum temperatures display no relationship. This may be due to the homogeneous urban landscape, the impact of cool water entering upstream at headwaters, or other physical characteristics of urban streams."
   }
 ]

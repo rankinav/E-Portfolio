@@ -53,3 +53,11 @@ def calc_ndvi(nir, red):
 ```{=html}
 <iframe width="900" height="700" src="https://utoronto.maps.arcgis.com/apps/View/index.html?appid=afe58019bf384ded937c2943d20261b8" title="Lost Rivers Demo"></iframe>
 ```
+
+## Urban ecology: Stream temperature as a function of impermeable land cover
+
+Increased impermeable surface cover increases runoff and temperatures in urban streams with
+ecological implications. Analysis of impermeable surface area at sites in Toronto region watersheds
+was carried out to test the relevance of this relationship. Surface impermeability is correlated with
+mean stream temperature at large scales, but minimum and maximum temperatures display no
+relationship. This may be due to the homogeneous urban landscape, the impact of cool water entering upstream at headwaters, or other physical characteristics of urban streams.

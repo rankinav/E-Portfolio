@@ -4,7 +4,6 @@ project:
 
 website:
   title: "Your E-Portfolio"
-  theme: jekyll-theme-cayman
   navbar:
     left:
       - href: index.qmd
@@ -16,7 +15,7 @@ website:
 
 format:
   html:
-    theme: flatly
+    theme: jekyll-theme-cayman
     css: styles.css
     toc: true
 

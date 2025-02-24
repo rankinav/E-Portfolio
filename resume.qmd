@@ -4,14 +4,29 @@ title: "Resume"
 
 # Education
 
--   hB.Sc, Biodiversity and Conservation Biology. University of Toronto. 2023.
--   MGEM, Geomatics for Environmental Management. University of British Columbia. 2025.
+**Honours Bachelor of Science, Biodiversity and Conservation Biology.**
 
-# Publications
+*University of Toronto. 2023.*
 
-*Peer-reviewed publications:*
+-   Minors - Geographic Information Systems, Philosophy
 
--   List any peer-reviewed publications here.
+-   Relevant coursework:
+
+    -   
+
+**Master of Geomatics for Environmental Management.**
+
+*University of British Columbia. 2025.*
+
+# Work Experience
+
+**GIS Library Assistant**
+
+University of Toronto Map and Data Library, May 2022-October 2023
+
+-   Assisted with special GIS projects
+-   Prepared geospatial data, including digitizing and georeferencing historical maps
+-   Produced web maps for presentation and display
 
 *Reports:*
 
