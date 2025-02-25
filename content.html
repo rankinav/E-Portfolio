@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Content &amp; Deliverables – Your E-Portfolio</title>
+<title>Content and deliverables – Your E-Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -140,13 +174,23 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#project-1---capstone-deliverables" id="toc-project-1---capstone-deliverables" class="nav-link active" data-scroll-target="#project-1---capstone-deliverables">Project 1 - Capstone Deliverables</a>
+  <li><a href="#modelling-ecological-connectivity-on-the-ubc-campus" id="toc-modelling-ecological-connectivity-on-the-ubc-campus" class="nav-link active" data-scroll-target="#modelling-ecological-connectivity-on-the-ubc-campus">Modelling ecological connectivity on the UBC campus</a>
   <ul class="collapse">
-  <li><a href="#leaflet" id="toc-leaflet" class="nav-link" data-scroll-target="#leaflet">Leaflet</a></li>
-  <li><a href="#code-snippets" id="toc-code-snippets" class="nav-link" data-scroll-target="#code-snippets">Code Snippets</a></li>
-  <li><a href="#web-maps" id="toc-web-maps" class="nav-link" data-scroll-target="#web-maps">Web maps</a></li>
-  <li><a href="#urban-ecology-stream-temperature-as-a-function-of-impermeable-land-cover" id="toc-urban-ecology-stream-temperature-as-a-function-of-impermeable-land-cover" class="nav-link" data-scroll-target="#urban-ecology-stream-temperature-as-a-function-of-impermeable-land-cover">Urban ecology: Stream temperature as a function of impermeable land cover</a></li>
+  <li><a href="#classified-land-cover" id="toc-classified-land-cover" class="nav-link" data-scroll-target="#classified-land-cover">Classified land cover</a></li>
+  <li><a href="#additional-code" id="toc-additional-code" class="nav-link" data-scroll-target="#additional-code">Additional code</a></li>
   </ul></li>
+  <li><a href="#urban-ecology-stream-temperature-as-a-function-of-impermeable-land-cover" id="toc-urban-ecology-stream-temperature-as-a-function-of-impermeable-land-cover" class="nav-link" data-scroll-target="#urban-ecology-stream-temperature-as-a-function-of-impermeable-land-cover">Urban ecology: stream temperature as a function of impermeable land cover</a>
+  <ul class="collapse">
+  <li><a href="#abstract" id="toc-abstract" class="nav-link" data-scroll-target="#abstract">Abstract:</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results:</a></li>
+  </ul></li>
+  <li><a href="#other-web-maps" id="toc-other-web-maps" class="nav-link" data-scroll-target="#other-web-maps">Other web maps</a>
+  <ul class="collapse">
+  <li><a href="#local-green-space-in-my-neighbourhood-in-toronto." id="toc-local-green-space-in-my-neighbourhood-in-toronto." class="nav-link" data-scroll-target="#local-green-space-in-my-neighbourhood-in-toronto.">Local green space in my neighbourhood in Toronto.</a></li>
+  <li><a href="#bicycle-rack-locations-and-reported-bicycle-thefts-in-toronto." id="toc-bicycle-rack-locations-and-reported-bicycle-thefts-in-toronto." class="nav-link" data-scroll-target="#bicycle-rack-locations-and-reported-bicycle-thefts-in-toronto.">Bicycle rack locations and reported bicycle thefts in Toronto.</a></li>
+  <li><a href="#york-county-ontario-1923" id="toc-york-county-ontario-1923" class="nav-link" data-scroll-target="#york-county-ontario-1923">York County, Ontario, 1923</a></li>
+  </ul></li>
+  <li><a href="#other-project-deliverables" id="toc-other-project-deliverables" class="nav-link" data-scroll-target="#other-project-deliverables">Other project deliverables</a></li>
   </ul>
 </nav>
     </div>
@@ -155,7 +199,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Content &amp; Deliverables</h1>
+<h1 class="title">Content and deliverables</h1>
 </div>
 
 
@@ -172,47 +216,83 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="project-1---capstone-deliverables" class="level1">
-<h1>Project 1 - Capstone Deliverables</h1>
-<p>This is a sample page where you can archive project deliverables. Every header you use will correspond to a tab in the legend - shown on the right-hand side of your screen (“On this page”).</p>
-<p>If you’ve produced any GIS layers for your 599 project, this may be a good place to share them as interactive maps through leaflet. Alternatively, you can upload high-res figures showing correlations, box-plots, etc. from your report here, and provide a brief overview of key project results. If you have written some useful functions, you may also want to share those here to demonstrate proficiency in particular coding languages or synergies between notable coding packages.</p>
-<section id="leaflet" class="level2">
-<h2 class="anchored" data-anchor-id="leaflet">Leaflet</h2>
+<section id="modelling-ecological-connectivity-on-the-ubc-campus" class="level1">
+<h1>Modelling ecological connectivity on the UBC campus</h1>
+<p>Capstone project for the MGEM program. This project involved classifying land cover at the University of British Columbia Vancouver campus and then modelling animal and human movement across the landscape to identify points of potential conflict and potential corridors to promote coexistence.</p>
+<section id="classified-land-cover" class="level2">
+<h2 class="anchored" data-anchor-id="classified-land-cover">Classified land cover</h2>
 <p>Sample leaflet - for detailed leaflet instructions, visit the FCOR 599 workshop archive page <a href="https://ubc-mgem-fcor599.github.io/FCOR-599-Workshops/Interactive_Maps/leaflet.html">here</a>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-edebe55aa5d300683f80" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-edebe55aa5d300683f80">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addScaleBar","args":[{"maxWidth":100,"metric":true,"imperial":true,"updateWhenIdle":true,"position":"bottomleft"}]}],"setView":[[49.2827,-123.1207],11,[]]},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-1c9663754d2cbe0ca0aa" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-1c9663754d2cbe0ca0aa">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addScaleBar","args":[{"maxWidth":100,"metric":true,"imperial":true,"updateWhenIdle":true,"position":"bottomleft"}]}],"setView":[[49.2827,-123.1207],11,[]]},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
-<section id="code-snippets" class="level2">
-<h2 class="anchored" data-anchor-id="code-snippets">Code Snippets</h2>
-<p>Sample code snippet. Notice that you can provide a toggle to switch between coding languages - this is referred to as a ‘tabset’ in quarto. It is good practice to try and convert your R code to python, and vice-versa to demonstrate coding proficiency. For example, let’s showcase a function for calculating NDVI in R and Python.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="language">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Python</a></li></ul>
-<div class="tab-content" data-group="language">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<pre class="(.r)"><code>calc_ndvi &lt;- function(nir, red){ ndvi &lt;- (nir-red)/(nir+red) return(ndvi) }</code></pre>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<pre class="(.python)"><code>def calc_ndvi(nir, red): 
-  ndvi = (nir.astype(float)-red.astype(float))/(nir.astype(float)+red.astype(float))
-  return(ndvi)</code></pre>
-</div>
-</div>
-</div>
+<section id="additional-code" class="level2">
+<h2 class="anchored" data-anchor-id="additional-code">Additional code</h2>
+<p>Python Arcpy cursor used to generate building capacity numbers based on building code limits to estimate human presence numbers within each building on campus.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">##checks if there is already a field for building capacity created</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">"capacity"</span> <span class="kw">not</span> <span class="kw">in</span> [f.name <span class="cf">for</span> f <span class="kw">in</span> arcpy.ListFields(<span class="st">"buildings_clipped"</span>)]:</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">##creates new field in attribute table</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    arcpy.management.AddField(in_table<span class="op">=</span><span class="st">"buildings_clipped"</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                              field_name<span class="op">=</span><span class="st">"capacity"</span>, </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>                              field_type<span class="op">=</span><span class="st">"FLOAT"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">##creating update cursor for buildings_clipped feature, looking at four specific fields</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> arcpy.da.UpdateCursor(<span class="st">"buildings_clipped"</span>, field_names<span class="op">=</span>[<span class="st">"Shape_Area"</span>, <span class="st">"bldg_usage"</span>, <span class="st">"max_floors"</span>, <span class="st">"capacity"</span>]) <span class="im">as</span> cursor:</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">##for every row, if the row has a building area value, then the building max capacity is added to the new field</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> cursor:</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> row[<span class="dv">0</span>] <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>            <span class="co">##max capacity is building area * number of floors * 0.4 people per m^2</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>            row[<span class="dv">3</span>] <span class="op">=</span> row[<span class="dv">0</span>] <span class="op">*</span> row[<span class="dv">2</span>] <span class="op">*</span> <span class="fl">0.4</span> </span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>            <span class="cf">pass</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>        cursor.updateRow(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="web-maps" class="level2">
-<h2 class="anchored" data-anchor-id="web-maps">Web maps</h2>
-<iframe width="900" height="700" src="https://utoronto.maps.arcgis.com/apps/View/index.html?appid=afe58019bf384ded937c2943d20261b8" title="Lost Rivers Demo"></iframe>
 </section>
-<section id="urban-ecology-stream-temperature-as-a-function-of-impermeable-land-cover" class="level2">
-<h2 class="anchored" data-anchor-id="urban-ecology-stream-temperature-as-a-function-of-impermeable-land-cover">Urban ecology: Stream temperature as a function of impermeable land cover</h2>
+<section id="urban-ecology-stream-temperature-as-a-function-of-impermeable-land-cover" class="level1">
+<h1>Urban ecology: stream temperature as a function of impermeable land cover</h1>
+<section id="abstract" class="level2">
+<h2 class="anchored" data-anchor-id="abstract">Abstract:</h2>
 <p>Increased impermeable surface cover increases runoff and temperatures in urban streams with ecological implications. Analysis of impermeable surface area at sites in Toronto region watersheds was carried out to test the relevance of this relationship. Surface impermeability is correlated with mean stream temperature at large scales, but minimum and maximum temperatures display no relationship. This may be due to the homogeneous urban landscape, the impact of cool water entering upstream at headwaters, or other physical characteristics of urban streams.</p>
-
-
 </section>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results:</h2>
+<p><img src="images/stream_temp.png" class="img-fluid"></p>
+<p>Data was accessed from open-source repositories maintained by the Toronto Region Conservation Authority and the Province of Ontario Geohub.</p>
+<p><img src="images/stream_plots.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="other-web-maps" class="level1">
+<h1>Other web maps</h1>
+<p>Other web mapping applications I have worked on include:</p>
+<section id="local-green-space-in-my-neighbourhood-in-toronto." class="level2">
+<h2 class="anchored" data-anchor-id="local-green-space-in-my-neighbourhood-in-toronto.">Local green space in my neighbourhood in Toronto.</h2>
+<p>An ESRI story map incorporating map elements, text, and photos.</p>
+<iframe src="https://storymaps.arcgis.com/stories/96512eb36b78413984c15506cd1b4f55" width="100%" height="700px" frameborder="0" allowfullscreen="" allow="geolocation"></iframe>
+</section>
+<section id="bicycle-rack-locations-and-reported-bicycle-thefts-in-toronto." class="level2">
+<h2 class="anchored" data-anchor-id="bicycle-rack-locations-and-reported-bicycle-thefts-in-toronto.">Bicycle rack locations and reported bicycle thefts in Toronto.</h2>
+<p>An instant app created for a course project.</p>
+<iframe width="100%" height="700" src="https://utoronto.maps.arcgis.com/apps/instant/basic/index.html?appid=993887d367224628bda6246c22f0558e" title="Heat map of bicycle racks and reported bicycle thefts in Toronto"></iframe>
+</section>
+<section id="york-county-ontario-1923" class="level2">
+<h2 class="anchored" data-anchor-id="york-county-ontario-1923">York County, Ontario, 1923</h2>
+<p>A georeferenced historical map of York County, digitized from the University of Toronto Map and Data Library collection.</p>
+<iframe width="100%" height="700" src="https://utoronto.maps.arcgis.com/apps/mapviewer/index.html?webmap=8a39d0c62df54f58a8e929bc73a62caf" title="Digitized historical guidal map of York County in Ontario"></iframe>
+</section>
+</section>
+<section id="other-project-deliverables" class="level1">
+<h1>Other project deliverables</h1>
+<p><img src="images/dams_map.png" class="img-fluid"></p>
+<p><embed src="images/Rankin_GEM510_Lab5-map.pdf" class="img-fluid" style="width"></p>
+
+
 </section>
 
 </main> <!-- /main -->

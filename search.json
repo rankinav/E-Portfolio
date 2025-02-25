@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Your E-Portfolio",
     "section": "",
-    "text": "I’m"
+    "text": "Hi, I’m Aidan. Born and raised in Toronto, Ontario, I completed my Bachelor of Science in Biodiversity and Conservation Biology at the University of Toronto in 2023 with minors in GIS and philosophy. I then moved to Vancouver, BC, to expand my knowledge and skills in geomatics and remote sensing in the Master of Geomatics for Environmental Management program at the University of British Columbia. My focus during this graduate degree has been applications of remotely sensed data for animal conservation on campus."
   },
   {
     "objectID": "resume.html",
@@ -30,9 +30,9 @@
   {
     "objectID": "content.html",
     "href": "content.html",
-    "title": "Content & Deliverables",
+    "title": "Content and deliverables",
     "section": "",
-    "text": "This is a sample page where you can archive project deliverables. Every header you use will correspond to a tab in the legend - shown on the right-hand side of your screen (“On this page”).\nIf you’ve produced any GIS layers for your 599 project, this may be a good place to share them as interactive maps through leaflet. Alternatively, you can upload high-res figures showing correlations, box-plots, etc. from your report here, and provide a brief overview of key project results. If you have written some useful functions, you may also want to share those here to demonstrate proficiency in particular coding languages or synergies between notable coding packages.\n\n\nSample leaflet - for detailed leaflet instructions, visit the FCOR 599 workshop archive page here.\n\n\n\n\n\n\n\n\n\nSample code snippet. Notice that you can provide a toggle to switch between coding languages - this is referred to as a ‘tabset’ in quarto. It is good practice to try and convert your R code to python, and vice-versa to demonstrate coding proficiency. For example, let’s showcase a function for calculating NDVI in R and Python.\n\nRPython\n\n\ncalc_ndvi &lt;- function(nir, red){ ndvi &lt;- (nir-red)/(nir+red) return(ndvi) }\n\n\ndef calc_ndvi(nir, red): \n  ndvi = (nir.astype(float)-red.astype(float))/(nir.astype(float)+red.astype(float))\n  return(ndvi)\n\n\n\n\n\n\n\n\n\n\nIncreased impermeable surface cover increases runoff and temperatures in urban streams with ecological implications. Analysis of impermeable surface area at sites in Toronto region watersheds was carried out to test the relevance of this relationship. Surface impermeability is correlated with mean stream temperature at large scales, but minimum and maximum temperatures display no relationship. This may be due to the homogeneous urban landscape, the impact of cool water entering upstream at headwaters, or other physical characteristics of urban streams."
+    "text": "Capstone project for the MGEM program. This project involved classifying land cover at the University of British Columbia Vancouver campus and then modelling animal and human movement across the landscape to identify points of potential conflict and potential corridors to promote coexistence.\n\n\nSample leaflet - for detailed leaflet instructions, visit the FCOR 599 workshop archive page here.\n\n\n\n\n\n\n\n\n\nPython Arcpy cursor used to generate building capacity numbers based on building code limits to estimate human presence numbers within each building on campus.\n##checks if there is already a field for building capacity created\nif \"capacity\" not in [f.name for f in arcpy.ListFields(\"buildings_clipped\")]:\n  \n    ##creates new field in attribute table\n    arcpy.management.AddField(in_table=\"buildings_clipped\",\n                              field_name=\"capacity\", \n                              field_type=\"FLOAT\")\n\n##creating update cursor for buildings_clipped feature, looking at four specific fields\nwith arcpy.da.UpdateCursor(\"buildings_clipped\", field_names=[\"Shape_Area\", \"bldg_usage\", \"max_floors\", \"capacity\"]) as cursor:\n  \n    ##for every row, if the row has a building area value, then the building max capacity is added to the new field\n    for row in cursor:\n      \n        if row[0] is not None:\n            ##max capacity is building area * number of floors * 0.4 people per m^2\n            row[3] = row[0] * row[2] * 0.4 \n        else:\n            pass\n\n        cursor.updateRow(row)"
   },
   {
     "objectID": "content.html#leaflet",
@@ -46,7 +46,7 @@
     "href": "content.html#code-snippets",
     "title": "Content & Deliverables",
     "section": "",
-    "text": "Sample code snippet. Notice that you can provide a toggle to switch between coding languages - this is referred to as a ‘tabset’ in quarto. It is good practice to try and convert your R code to python, and vice-versa to demonstrate coding proficiency. For example, let’s showcase a function for calculating NDVI in R and Python.\n\nRPython\n\n\ncalc_ndvi &lt;- function(nir, red){ ndvi &lt;- (nir-red)/(nir+red) return(ndvi) }\n\n\ndef calc_ndvi(nir, red): \n  ndvi = (nir.astype(float)-red.astype(float))/(nir.astype(float)+red.astype(float))\n  return(ndvi)"
+    "text": "Arcpy cursor snippet used to generate building capacity numbers based on building code limits to estimate human presence numbers on campus.\n##checks if there is already a field for building capacity created\nif \"capacity\" not in [f.name for f in arcpy.ListFields(\"buildings_clipped\")]:\n  \n    ##creates new field in attribute table\n    arcpy.management.AddField(in_table=\"buildings_clipped\",\n                              field_name=\"capacity\", \n                              field_type=\"FLOAT\")\n\n##creating update cursor for buildings_clipped feature, looking at four specific fields\nwith arcpy.da.UpdateCursor(\"buildings_clipped\", field_names=[\"Shape_Area\", \"bldg_usage\", \"max_floors\", \"capacity\"]) as cursor:\n  \n    ##for every row, if the row has a building area value, then the building max capacity is added to the new field\n    for row in cursor:\n      \n        if row[0] is not None:\n            ##max capacity is building area * number of floors * 0.4 people per m^2\n            row[3] = row[0] * row[2] * 0.4 \n        else:\n            pass\n\n        cursor.updateRow(row)"
   },
   {
     "objectID": "content.html#external-links",
@@ -59,7 +59,63 @@
     "objectID": "content.html#urban-ecology-stream-temperature-as-a-function-of-impermeable-land-cover",
     "href": "content.html#urban-ecology-stream-temperature-as-a-function-of-impermeable-land-cover",
     "title": "Content & Deliverables",
+    "section": "Urban ecology: Stream temperature as a function of impermeable land cover",
+    "text": "Urban ecology: Stream temperature as a function of impermeable land cover\nIncreased impermeable surface cover increases runoff and temperatures in urban streams with ecological implications. Analysis of impermeable surface area at sites in Toronto region watersheds was carried out to test the relevance of this relationship. Surface impermeability is correlated with mean stream temperature at large scales, but minimum and maximum temperatures display no relationship. This may be due to the homogeneous urban landscape, the impact of cool water entering upstream at headwaters, or other physical characteristics of urban streams."
+  },
+  {
+    "objectID": "content.html#web-maps",
+    "href": "content.html#web-maps",
+    "title": "Content & Deliverables",
     "section": "",
-    "text": "Increased impermeable surface cover increases runoff and temperatures in urban streams with ecological implications. Analysis of impermeable surface area at sites in Toronto region watersheds was carried out to test the relevance of this relationship. Surface impermeability is correlated with mean stream temperature at large scales, but minimum and maximum temperatures display no relationship. This may be due to the homogeneous urban landscape, the impact of cool water entering upstream at headwaters, or other physical characteristics of urban streams."
+    "text": "Story map on local green space in my neighbourhood in Toronto.\n\nInstant app heat map of bicycle rack locations and reported bicycle thefts in Toronto.\n\nGeoreferenced historical map of York County, Ontario, from 1923. Digitized from University of Toronto Map and Data Library collection."
+  },
+  {
+    "objectID": "content.html#local-green-space-in-my-neighbourhood-in-toronto.",
+    "href": "content.html#local-green-space-in-my-neighbourhood-in-toronto.",
+    "title": "Content and deliverables",
+    "section": "Local green space in my neighbourhood in Toronto.",
+    "text": "Local green space in my neighbourhood in Toronto.\nAn ESRI story map incorporating map elements, text, and photos."
+  },
+  {
+    "objectID": "content.html#bicycle-rack-locations-and-reported-bicycle-thefts-in-toronto.",
+    "href": "content.html#bicycle-rack-locations-and-reported-bicycle-thefts-in-toronto.",
+    "title": "Content and deliverables",
+    "section": "Bicycle rack locations and reported bicycle thefts in Toronto.",
+    "text": "Bicycle rack locations and reported bicycle thefts in Toronto.\nAn instant app created for a course project."
+  },
+  {
+    "objectID": "content.html#york-county-ontario-1923",
+    "href": "content.html#york-county-ontario-1923",
+    "title": "Content and deliverables",
+    "section": "York County, Ontario, 1923",
+    "text": "York County, Ontario, 1923\nA georeferenced historical map of York County, digitized from the University of Toronto Map and Data Library collection."
+  },
+  {
+    "objectID": "content.html#abstract",
+    "href": "content.html#abstract",
+    "title": "Content and deliverables",
+    "section": "Abstract:",
+    "text": "Abstract:\nIncreased impermeable surface cover increases runoff and temperatures in urban streams with ecological implications. Analysis of impermeable surface area at sites in Toronto region watersheds was carried out to test the relevance of this relationship. Surface impermeability is correlated with mean stream temperature at large scales, but minimum and maximum temperatures display no relationship. This may be due to the homogeneous urban landscape, the impact of cool water entering upstream at headwaters, or other physical characteristics of urban streams."
+  },
+  {
+    "objectID": "content.html#results",
+    "href": "content.html#results",
+    "title": "Content and deliverables",
+    "section": "Results:",
+    "text": "Results:\n\nData was accessed from open-source repositories maintained by the Toronto Region Conservation Authority and the Province of Ontario Geohub."
+  },
+  {
+    "objectID": "content.html#classified-land-cover",
+    "href": "content.html#classified-land-cover",
+    "title": "Content and deliverables",
+    "section": "",
+    "text": "Sample leaflet - for detailed leaflet instructions, visit the FCOR 599 workshop archive page here."
+  },
+  {
+    "objectID": "content.html#additional-code",
+    "href": "content.html#additional-code",
+    "title": "Content and deliverables",
+    "section": "",
+    "text": "Python Arcpy cursor used to generate building capacity numbers based on building code limits to estimate human presence numbers within each building on campus.\n##checks if there is already a field for building capacity created\nif \"capacity\" not in [f.name for f in arcpy.ListFields(\"buildings_clipped\")]:\n  \n    ##creates new field in attribute table\n    arcpy.management.AddField(in_table=\"buildings_clipped\",\n                              field_name=\"capacity\", \n                              field_type=\"FLOAT\")\n\n##creating update cursor for buildings_clipped feature, looking at four specific fields\nwith arcpy.da.UpdateCursor(\"buildings_clipped\", field_names=[\"Shape_Area\", \"bldg_usage\", \"max_floors\", \"capacity\"]) as cursor:\n  \n    ##for every row, if the row has a building area value, then the building max capacity is added to the new field\n    for row in cursor:\n      \n        if row[0] is not None:\n            ##max capacity is building area * number of floors * 0.4 people per m^2\n            row[3] = row[0] * row[2] * 0.4 \n        else:\n            pass\n\n        cursor.updateRow(row)"
   }
 ]
