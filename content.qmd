@@ -13,12 +13,14 @@ Capstone project for the MGEM program. This project involved classifying land co
 Sample leaflet - for detailed leaflet instructions, visit the FCOR 599 workshop archive page [here](https://ubc-mgem-fcor599.github.io/FCOR-599-Workshops/Interactive_Maps/leaflet.html).
 
 ```{r leaflet, include = FALSE}
-library(dplyr); library(leaflet)
+library(dplyr); library(leaflet); library(terra)
 
-m <- leaflet() %>%
+land_cover <- rast("C:/Users/rankinai.stu/OneDrive - UBC/Documents/GitHub/E-Portfolio-sample/images/campus_classified.tif")
+
+m <- leaflet(width = "100%") %>%
   addProviderTiles("Esri.WorldImagery") %>%
-  addScaleBar(position = c("bottomleft")) %>%
-  setView(-123.1207, 49.2827, zoom = 11)
+##  addRasterImage(land_cover, maxBytes = 10 * 2048 *2048) %>%
+  addScaleBar(position = c("bottomleft"))
 
 ```
 
@@ -68,6 +70,30 @@ Data was accessed from open-source repositories maintained by the Toronto Region
 
 ![](images/stream_plots.png)
 
+# Historical GIS data curation and digitization
+
+
+
+## Lost Rivers of Toronto
+
+```{=html}
+<iframe width="100%" height="700" src="https://utoronto.maps.arcgis.com/apps/instant/basic/index.html?appid=4927b6de70a24c74ae4b7672c4a1a608" title="Lost Rivers of Toronto"></iframe>
+```
+
+## Southern Ontario historical maps
+
+```{=html}
+<iframe width="100%" height="700" src="https://utoronto.maps.arcgis.com/apps/instant/basic/index.html?appid=21d76694d42d4b9e9cf5286d1f9ce8b9" title="Southern Ontario historical maps"></iframe>
+```
+
+## Historical York County, 1923.
+
+A georeferenced historical map of York County, Ontario digitized from the University of Toronto Map and Data Library collection.
+
+```{=html}
+<iframe width="100%" height="700" src="https://utoronto.maps.arcgis.com/apps/mapviewer/index.html?webmap=8a39d0c62df54f58a8e929bc73a62caf" title="Digitized historical guidal map of York County in Ontario"></iframe>
+```
+
 # Other web maps
 
 Other web mapping applications I have worked on include:
@@ -88,16 +114,13 @@ An instant app created for a course project.
 <iframe width="100%" height="700" src="https://utoronto.maps.arcgis.com/apps/instant/basic/index.html?appid=993887d367224628bda6246c22f0558e" title="Heat map of bicycle racks and reported bicycle thefts in Toronto"></iframe>
 ```
 
-## Historical York County, 1923.
-
-A georeferenced historical map of York County, Ontario digitized from the University of Toronto Map and Data Library collection.
-
-```{=html}
-<iframe width="100%" height="700" src="https://utoronto.maps.arcgis.com/apps/mapviewer/index.html?webmap=8a39d0c62df54f58a8e929bc73a62caf" title="Digitized historical guidal map of York County in Ontario"></iframe>
-```
-
 # Other project deliverables
+
+## Mapping the impact of hydroelectric dams on salmon habitat access on Vancouver Island
 
 ![](images/dams_map.png)
 
+## Mapping least cost paths for Grizzly bear management in an Alberta conservation unit
+
 ![](images/GEM510_Lab5.png)
+

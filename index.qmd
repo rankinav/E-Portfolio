@@ -1,6 +1,6 @@
 ---
 title: "Your E-Portfolio"
-image: images/MGEM_logo.png
+image: images/aiden.gif
 about:
   template: trestles
   image-width: 20em
