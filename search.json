@@ -2,7 +2,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Your E-Portfolio",
+    "title": "Aidan’s E-Portfolio",
     "section": "",
     "text": "Hi, I’m Aidan. Born and raised in Toronto, Ontario, I completed my Bachelor of Science in Biodiversity and Conservation Biology at the University of Toronto in 2023 with minors in GIS and philosophy. I then moved to Vancouver, BC, to expand my knowledge and skills in geomatics and remote sensing in the Master of Geomatics for Environmental Management program at the University of British Columbia. My focus during this graduate degree has been applications of remotely sensed data for animal conservation on campus."
   },
@@ -11,7 +11,7 @@
     "href": "resume.html",
     "title": "Resume",
     "section": "",
-    "text": "Education\nHonours Bachelor of Science, Biodiversity and Conservation Biology.\nUniversity of Toronto. 2023.\n\nMinors - Geographic Information Systems, Philosophy\nRelevant coursework:\n\n\n\n\nMaster of Geomatics for Environmental Management.\nUniversity of British Columbia. 2025.\n\n\nWork Experience\nGIS Library Assistant\nUniversity of Toronto Map and Data Library, May 2022-October 2023\n\nAssisted with special GIS projects\nPrepared geospatial data, including digitizing and georeferencing historical maps\nProduced web maps for presentation and display\n\n\n\nInstitutional Service\n\nVolunteering etc."
+    "text": "GIS Resume 2023  by  rankina001"
   },
   {
     "objectID": "publications.html",
@@ -32,7 +32,7 @@
     "href": "content.html",
     "title": "Content and deliverables",
     "section": "",
-    "text": "Capstone project for the MGEM program. This project involved classifying land cover at the University of British Columbia Vancouver campus and then modelling animal and human movement across the landscape to identify points of potential conflict and potential corridors to promote coexistence.\n\n\nSample leaflet - for detailed leaflet instructions, visit the FCOR 599 workshop archive page here.\n\n\n\n\n\n\n\n\n\nPython Arcpy cursor used to generate building capacity numbers based on building code limits to estimate human presence numbers within each building on campus.\n##checks if there is already a field for building capacity created\nif \"capacity\" not in [f.name for f in arcpy.ListFields(\"buildings_clipped\")]:\n  \n    ##creates new field in attribute table\n    arcpy.management.AddField(in_table=\"buildings_clipped\",\n                              field_name=\"capacity\", \n                              field_type=\"FLOAT\")\n\n##creating update cursor for buildings_clipped feature, looking at four specific fields\nwith arcpy.da.UpdateCursor(\"buildings_clipped\", field_names=[\"Shape_Area\", \"bldg_usage\", \"max_floors\", \"capacity\"]) as cursor:\n  \n    ##for every row, if the row has a building area value, then the building max capacity is added to the new field\n    for row in cursor:\n      \n        if row[0] is not None:\n            ##max capacity is building area * number of floors * 0.4 people per m^2\n            row[3] = row[0] * row[2] * 0.4 \n        else:\n            pass\n\n        cursor.updateRow(row)"
+    "text": "The MGEM program covered a wide breadth of topics related to GIS, remote sensing, ecology, and environmental management challenges. Below are some deliverables from many of the courses.\n\n\n\n\nMapping the impact of hydroelectric dams on salmon habitat access on Vancouver Island.\n Mapping least cost paths for Grizzly bear management in an Alberta conservation unit.\n\n\n\n\n\nCode snippet of a function to calculate reflectance in Landsat bandwidths from raw reflectance values.\nlandsat_band &lt;- function(df, lwr, upr, centre) { ##function to calculate each landsat band value\n  df[df$wavelength&gt;=lwr&df$wavelength&lt;=upr,] %&gt;% ##selects values between given lower and upper wavelengths\n    mutate(mixel_1 = mean(mixel_1), ##converts each pixel value to the mean of the chosen wavelengths\n           mixel_2 = mean(mixel_2),\n           mixel_3 = mean(mixel_3),\n           mixel_4 = mean(mixel_4),\n           mixel_5 = mean(mixel_5),\n           wavelength = centre) %&gt;% ##converts wavelength value to the value of the centre of the band\n    slice(1) ##removes extraneous identical rows\n}\n\nlandsat_b1 &lt;- landsat_band(spectra_mixed_wide, 450, 520, 485) ##apply function for each band\nlandsat_b2 &lt;- landsat_band(spectra_mixed_wide, 520, 600, 560)\nlandsat_b3 &lt;- landsat_band(spectra_mixed_wide, 630, 690, 660)\nlandsat_b4 &lt;- landsat_band(spectra_mixed_wide, 770, 900, 835) \nlandsat_b5 &lt;- landsat_band(spectra_mixed_wide, 1550, 1750, 1650)\nlandsat_b7 &lt;- landsat_band(spectra_mixed_wide, 2090, 2350, 2220)\n\n\n\nA proposed project connecting landscape ecology concepts like ecological connectivity, landscape fragmentation, and species dispersal, with remote sensing techniques and data sources.\n    Landscape Ecology project proposal  by  rankina001   \n\n\n\nA study of communication techniques utilized in a town hall meeting on a pressing Ontario environmental issue.\n   FCOR510 Audience Analysis  by  rankina001"
   },
   {
     "objectID": "content.html#leaflet",
@@ -158,28 +158,28 @@
     "href": "project.html",
     "title": "Capstone project",
     "section": "",
-    "text": "Capstone project for the MGEM program. This project involved classifying land cover at the University of British Columbia Vancouver campus and then modelling animal and human movement across the landscape to identify points of potential conflict and potential corridors to promote coexistence.\n\n\nLand cover on campus was classified using random forests in Python, from Planet SkySat satellite imagery and Vancouver public LiDAR.\n\n\n\n\n\n\n\nThe most important features in training the random forests classifier were the normalized difference vegetation index, a measure of vegetation derived from the red and near-infrared bands of the imagery, and the digital surface model, an elevation model of surface features derived from LiDAR.\n\n\n\n\n\n\nPython Arcpy cursor used to generate building capacity numbers based on building code limits to estimate human presence numbers within each building on campus.\n##checks if there is already a field for building capacity created\nif \"capacity\" not in [f.name for f in arcpy.ListFields(\"buildings_clipped\")]:\n  \n    ##creates new field in attribute table\n    arcpy.management.AddField(in_table=\"buildings_clipped\",\n                              field_name=\"capacity\", \n                              field_type=\"FLOAT\")\n\n##creating update cursor for buildings_clipped feature, looking at four specific fields\nwith arcpy.da.UpdateCursor(\"buildings_clipped\", field_names=[\"Shape_Area\", \"bldg_usage\", \"max_floors\", \"capacity\"]) as cursor:\n  \n    ##for every row, if the row has a building area value, then the building max capacity is added to the new field\n    for row in cursor:\n      \n        if row[0] is not None:\n            ##max capacity is building area * number of floors * 0.4 people per m^2\n            row[3] = row[0] * row[2] * 0.4 \n        else:\n            pass\n\n        cursor.updateRow(row)"
+    "text": "Capstone project for the MGEM program. This project involved classifying land cover at the University of British Columbia Vancouver campus and then modelling animal and human movement across the landscape to identify points of potential conflict and potential corridors to promote coexistence.\n\n\n\nLand cover on campus was classified using random forests in Python, from Planet SkySat satellite imagery and Vancouver public LiDAR.\n\nThe most important features in training the random forests classifier were the normalized difference vegetation index, a measure of vegetation derived from the red and near-infrared bands of the imagery, and the digital surface model, an elevation model of surface features derived from LiDAR.\n\n\n\n\nFrom the classified land cover map, human pedestrian and wildlife connectivity models were run and typical connectivity maps were created. Above is the mean connectivity values per 0.5x0.5 metre cell, calculated from combining connectivity model outputs for five different test species. Species resistance values per land cover class were reclassified according to the table below, where each value represents the relative resistance or difficulty each species has in moving through a cell of the associated land cover type.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSpecies\nForest\nLow veg\nGrass\nBarren\nWater\nArtificial turf\nAsphalt\nBuilding\nShadow\n\n\n\n\nHuman pedestrian\n60\n70\n20\n20\n100\n30\n1\n30\n15\n\n\nPacific treefrog\n10\n10\n30\n30\n1\n50\n70\n100\n85\n\n\nLittle brown bat\n1\n1\n10\n1\n1\n60\n80\n60\n70\n\n\nBand-tailed pigeon\n1\n1\n1\n1\n1\n30\n30\n80\n65\n\n\nGrey squirrel\n1\n10\n10\n10\n100\n30\n50\n90\n70\n\n\nCoyote\n10\n10\n10\n10\n100\n60\n30\n100\n70\n\n\n\n\n\n\nPython Arcpy cursor used to generate building capacity numbers based on building code limits to estimate human presence numbers within each building on campus.\n##checks if there is already a field for building capacity created\nif \"capacity\" not in [f.name for f in arcpy.ListFields(\"buildings_clipped\")]:\n  \n    ##creates new field in attribute table\n    arcpy.management.AddField(in_table=\"buildings_clipped\",\n                              field_name=\"capacity\", \n                              field_type=\"FLOAT\")\n\n##creating update cursor for buildings_clipped feature, looking at four specific fields\nwith arcpy.da.UpdateCursor(\"buildings_clipped\", field_names=[\"Shape_Area\", \"bldg_usage\", \"max_floors\", \"capacity\"]) as cursor:\n  \n    ##for every row, if the row has a building area value, then the building max capacity is added to the new field\n    for row in cursor:\n        if row[0] is not None:\n            ##max capacity is building area * number of floors * 0.4 people per m^2\n            row[3] = row[0] * row[2] * 0.4 \n        else:\n            pass\n        cursor.updateRow(row)\nConfiguration file for running Omniscape connectivity model in Julia, with coyote species-specific parameters.\nresistance_file = C:/Users/ranki/Documents/Grad/FCOR599/campus_resample_v2.tif\nradius = 100\nblock_size = 21\nproject_name = C:/Users/ranki/Documents/Grad/FCOR599/coyote_config/coyote_test\n\nsource_from_resistance = true\nr_cutoff = 30\nreclassify_resistance = true\nreclass_table = C:/Users/ranki/Documents/Grad/FCOR599/coyote_config/coyote_reclass_table.txt\ncalc_normalized_current = true\n\nprecision = single\nsolver = cholmod"
   },
   {
     "objectID": "project.html#classified-land-cover",
     "href": "project.html#classified-land-cover",
     "title": "Capstone project",
     "section": "",
-    "text": "Land cover on campus was classified using random forests in Python, from Planet SkySat satellite imagery and Vancouver public LiDAR.\n\n\n\n\n\n\n\nThe most important features in training the random forests classifier were the normalized difference vegetation index, a measure of vegetation derived from the red and near-infrared bands of the imagery, and the digital surface model, an elevation model of surface features derived from LiDAR."
+    "text": "Land cover on campus was classified using random forests in Python, from Planet SkySat satellite imagery and Vancouver public LiDAR.\n\nThe most important features in training the random forests classifier were the normalized difference vegetation index, a measure of vegetation derived from the red and near-infrared bands of the imagery, and the digital surface model, an elevation model of surface features derived from LiDAR."
   },
   {
     "objectID": "project.html#additional-code",
     "href": "project.html#additional-code",
     "title": "Capstone project",
     "section": "",
-    "text": "Python Arcpy cursor used to generate building capacity numbers based on building code limits to estimate human presence numbers within each building on campus.\n##checks if there is already a field for building capacity created\nif \"capacity\" not in [f.name for f in arcpy.ListFields(\"buildings_clipped\")]:\n  \n    ##creates new field in attribute table\n    arcpy.management.AddField(in_table=\"buildings_clipped\",\n                              field_name=\"capacity\", \n                              field_type=\"FLOAT\")\n\n##creating update cursor for buildings_clipped feature, looking at four specific fields\nwith arcpy.da.UpdateCursor(\"buildings_clipped\", field_names=[\"Shape_Area\", \"bldg_usage\", \"max_floors\", \"capacity\"]) as cursor:\n  \n    ##for every row, if the row has a building area value, then the building max capacity is added to the new field\n    for row in cursor:\n      \n        if row[0] is not None:\n            ##max capacity is building area * number of floors * 0.4 people per m^2\n            row[3] = row[0] * row[2] * 0.4 \n        else:\n            pass\n\n        cursor.updateRow(row)"
+    "text": "Python Arcpy cursor used to generate building capacity numbers based on building code limits to estimate human presence numbers within each building on campus.\n##checks if there is already a field for building capacity created\nif \"capacity\" not in [f.name for f in arcpy.ListFields(\"buildings_clipped\")]:\n  \n    ##creates new field in attribute table\n    arcpy.management.AddField(in_table=\"buildings_clipped\",\n                              field_name=\"capacity\", \n                              field_type=\"FLOAT\")\n\n##creating update cursor for buildings_clipped feature, looking at four specific fields\nwith arcpy.da.UpdateCursor(\"buildings_clipped\", field_names=[\"Shape_Area\", \"bldg_usage\", \"max_floors\", \"capacity\"]) as cursor:\n  \n    ##for every row, if the row has a building area value, then the building max capacity is added to the new field\n    for row in cursor:\n        if row[0] is not None:\n            ##max capacity is building area * number of floors * 0.4 people per m^2\n            row[3] = row[0] * row[2] * 0.4 \n        else:\n            pass\n        cursor.updateRow(row)\nConfiguration file for running Omniscape connectivity model in Julia, with coyote species-specific parameters.\nresistance_file = C:/Users/ranki/Documents/Grad/FCOR599/campus_resample_v2.tif\nradius = 100\nblock_size = 21\nproject_name = C:/Users/ranki/Documents/Grad/FCOR599/coyote_config/coyote_test\n\nsource_from_resistance = true\nr_cutoff = 30\nreclassify_resistance = true\nreclass_table = C:/Users/ranki/Documents/Grad/FCOR599/coyote_config/coyote_reclass_table.txt\ncalc_normalized_current = true\n\nprecision = single\nsolver = cholmod"
   },
   {
     "objectID": "other.html",
     "href": "other.html",
-    "title": "Content and deliverables",
+    "title": "Other work",
     "section": "",
-    "text": "Capstone project for the MGEM program. This project involved classifying land cover at the University of British Columbia Vancouver campus and then modelling animal and human movement across the landscape to identify points of potential conflict and potential corridors to promote coexistence.\n\n\nSample leaflet - for detailed leaflet instructions, visit the FCOR 599 workshop archive page here.\n\n\n\n\n\n\n\n\n\nPython Arcpy cursor used to generate building capacity numbers based on building code limits to estimate human presence numbers within each building on campus.\n##checks if there is already a field for building capacity created\nif \"capacity\" not in [f.name for f in arcpy.ListFields(\"buildings_clipped\")]:\n  \n    ##creates new field in attribute table\n    arcpy.management.AddField(in_table=\"buildings_clipped\",\n                              field_name=\"capacity\", \n                              field_type=\"FLOAT\")\n\n##creating update cursor for buildings_clipped feature, looking at four specific fields\nwith arcpy.da.UpdateCursor(\"buildings_clipped\", field_names=[\"Shape_Area\", \"bldg_usage\", \"max_floors\", \"capacity\"]) as cursor:\n  \n    ##for every row, if the row has a building area value, then the building max capacity is added to the new field\n    for row in cursor:\n      \n        if row[0] is not None:\n            ##max capacity is building area * number of floors * 0.4 people per m^2\n            row[3] = row[0] * row[2] * 0.4 \n        else:\n            pass\n\n        cursor.updateRow(row)"
+    "text": "Increased impermeable surface cover increases runoff and temperatures in urban streams with ecological implications. Analysis of impermeable surface area at sites in Toronto region watersheds was carried out to test the relevance of this relationship. Surface impermeability is correlated with mean stream temperature at large scales, but minimum and maximum temperatures display no relationship. This may be due to the homogeneous urban landscape, the impact of cool water entering upstream at headwaters, or other physical characteristics of urban streams.\n\n\n\n\nData was accessed from open-source repositories maintained by the Toronto Region Conservation Authority and the Province of Ontario Geohub."
   },
   {
     "objectID": "other.html#classified-land-cover",
@@ -198,49 +198,49 @@
   {
     "objectID": "other.html#abstract",
     "href": "other.html#abstract",
-    "title": "Content and deliverables",
-    "section": "Abstract:",
-    "text": "Abstract:\nIncreased impermeable surface cover increases runoff and temperatures in urban streams with ecological implications. Analysis of impermeable surface area at sites in Toronto region watersheds was carried out to test the relevance of this relationship. Surface impermeability is correlated with mean stream temperature at large scales, but minimum and maximum temperatures display no relationship. This may be due to the homogeneous urban landscape, the impact of cool water entering upstream at headwaters, or other physical characteristics of urban streams."
+    "title": "Other work",
+    "section": "",
+    "text": "Increased impermeable surface cover increases runoff and temperatures in urban streams with ecological implications. Analysis of impermeable surface area at sites in Toronto region watersheds was carried out to test the relevance of this relationship. Surface impermeability is correlated with mean stream temperature at large scales, but minimum and maximum temperatures display no relationship. This may be due to the homogeneous urban landscape, the impact of cool water entering upstream at headwaters, or other physical characteristics of urban streams."
   },
   {
     "objectID": "other.html#results",
     "href": "other.html#results",
-    "title": "Content and deliverables",
-    "section": "Results:",
-    "text": "Results:\n\nData was accessed from open-source repositories maintained by the Toronto Region Conservation Authority and the Province of Ontario Geohub."
+    "title": "Other work",
+    "section": "",
+    "text": "Data was accessed from open-source repositories maintained by the Toronto Region Conservation Authority and the Province of Ontario Geohub."
   },
   {
     "objectID": "other.html#lost-rivers-of-toronto",
     "href": "other.html#lost-rivers-of-toronto",
-    "title": "Content and deliverables",
+    "title": "Other work",
     "section": "Lost Rivers of Toronto",
-    "text": "Lost Rivers of Toronto"
+    "text": "Lost Rivers of Toronto\nA project mapping historical lost and buried rivers in Toronto. Contributed digitized rivers from early 20th century historical maps and edited existing layers based on potential stream locations from elevation."
   },
   {
     "objectID": "other.html#southern-ontario-historical-maps",
     "href": "other.html#southern-ontario-historical-maps",
-    "title": "Content and deliverables",
+    "title": "Other work",
     "section": "Southern Ontario historical maps",
-    "text": "Southern Ontario historical maps"
+    "text": "Southern Ontario historical maps\nA project mapping historical road networks across Southern Ontario. Contributed digitized lines"
   },
   {
     "objectID": "other.html#historical-york-county-1923.",
     "href": "other.html#historical-york-county-1923.",
-    "title": "Content and deliverables",
+    "title": "Other work",
     "section": "Historical York County, 1923.",
-    "text": "Historical York County, 1923.\nA georeferenced historical map of York County, Ontario digitized from the University of Toronto Map and Data Library collection."
+    "text": "Historical York County, 1923.\nA georeferenced historical map of York County, Ontario, digitized from the University of Toronto Map and Data Library collection."
   },
   {
     "objectID": "other.html#local-green-space-in-my-neighbourhood-in-toronto.",
     "href": "other.html#local-green-space-in-my-neighbourhood-in-toronto.",
-    "title": "Content and deliverables",
+    "title": "Other work",
     "section": "Local green space in my neighbourhood in Toronto.",
     "text": "Local green space in my neighbourhood in Toronto.\nAn ESRI story map incorporating map elements, text, and photos."
   },
   {
     "objectID": "other.html#bicycle-rack-locations-and-reported-bicycle-thefts-in-toronto.",
     "href": "other.html#bicycle-rack-locations-and-reported-bicycle-thefts-in-toronto.",
-    "title": "Content and deliverables",
+    "title": "Other work",
     "section": "Bicycle rack locations and reported bicycle thefts in Toronto.",
     "text": "Bicycle rack locations and reported bicycle thefts in Toronto.\nAn instant app created for a course project."
   },
@@ -257,5 +257,47 @@
     "title": "Content and deliverables",
     "section": "Mapping least cost paths for Grizzly bear management in an Alberta conservation unit",
     "text": "Mapping least cost paths for Grizzly bear management in an Alberta conservation unit"
+  },
+  {
+    "objectID": "content.html#deliverable-maps",
+    "href": "content.html#deliverable-maps",
+    "title": "Content and deliverables",
+    "section": "",
+    "text": "Mapping the impact of hydroelectric dams on salmon habitat access on Vancouver Island.\n\nMapping least cost paths for Grizzly bear management in an Alberta conservation unit"
+  },
+  {
+    "objectID": "content.html#geographic-information-systems-for-environmental-management",
+    "href": "content.html#geographic-information-systems-for-environmental-management",
+    "title": "Content and deliverables",
+    "section": "",
+    "text": "Mapping the impact of hydroelectric dams on salmon habitat access on Vancouver Island.\n Mapping least cost paths for Grizzly bear management in an Alberta conservation unit."
+  },
+  {
+    "objectID": "content.html#remote-sensing-and-advanced-earth-observation",
+    "href": "content.html#remote-sensing-and-advanced-earth-observation",
+    "title": "Content and deliverables",
+    "section": "",
+    "text": "Code snippet of a function to calculate reflectance in Landsat bandwidths from raw reflectance values.\nlandsat_band &lt;- function(df, lwr, upr, centre) { ##function to calculate each landsat band value\n  df[df$wavelength&gt;=lwr&df$wavelength&lt;=upr,] %&gt;% ##selects values between given lower and upper wavelengths\n    mutate(mixel_1 = mean(mixel_1), ##converts each pixel value to the mean of the chosen wavelengths\n           mixel_2 = mean(mixel_2),\n           mixel_3 = mean(mixel_3),\n           mixel_4 = mean(mixel_4),\n           mixel_5 = mean(mixel_5),\n           wavelength = centre) %&gt;% ##converts wavelength value to the value of the centre of the band\n    slice(1) ##removes extraneous identical rows\n}\n\nlandsat_b1 &lt;- landsat_band(spectra_mixed_wide, 450, 520, 485) ##apply function for each band\nlandsat_b2 &lt;- landsat_band(spectra_mixed_wide, 520, 600, 560)\nlandsat_b3 &lt;- landsat_band(spectra_mixed_wide, 630, 690, 660)\nlandsat_b4 &lt;- landsat_band(spectra_mixed_wide, 770, 900, 835) \nlandsat_b5 &lt;- landsat_band(spectra_mixed_wide, 1550, 1750, 1650)\nlandsat_b7 &lt;- landsat_band(spectra_mixed_wide, 2090, 2350, 2220)"
+  },
+  {
+    "objectID": "content.html#landscape-ecology",
+    "href": "content.html#landscape-ecology",
+    "title": "Content and deliverables",
+    "section": "",
+    "text": "A proposed project connecting landscape ecology concepts like ecological connectivity, landscape fragmentation, and species dispersal, with remote sensing techniques and data sources.\n    Landscape Ecology project proposal  by  rankina001"
+  },
+  {
+    "objectID": "project.html#connectivity-modelling",
+    "href": "project.html#connectivity-modelling",
+    "title": "Capstone project",
+    "section": "",
+    "text": "From the classified land cover map, human pedestrian and wildlife connectivity models were run and typical connectivity maps were created. Above is the mean connectivity values per 0.5x0.5 metre cell, calculated from combining connectivity model outputs for five different test species. Species resistance values per land cover class were reclassified according to the table below, where each value represents the relative resistance or difficulty each species has in moving through a cell of the associated land cover type.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSpecies\nForest\nLow veg\nGrass\nBarren\nWater\nArtificial turf\nAsphalt\nBuilding\nShadow\n\n\n\n\nHuman pedestrian\n60\n70\n20\n20\n100\n30\n1\n30\n15\n\n\nPacific treefrog\n10\n10\n30\n30\n1\n50\n70\n100\n85\n\n\nLittle brown bat\n1\n1\n10\n1\n1\n60\n80\n60\n70\n\n\nBand-tailed pigeon\n1\n1\n1\n1\n1\n30\n30\n80\n65\n\n\nGrey squirrel\n1\n10\n10\n10\n100\n30\n50\n90\n70\n\n\nCoyote\n10\n10\n10\n10\n100\n60\n30\n100\n70"
+  },
+  {
+    "objectID": "content.html#professional-communication-and-diverse-knowledge-systems",
+    "href": "content.html#professional-communication-and-diverse-knowledge-systems",
+    "title": "Content and deliverables",
+    "section": "",
+    "text": "A study of communication techniques utilized in a town hall meeting on a pressing Ontario environmental issue.\n   FCOR510 Audience Analysis  by  rankina001"
   }
 ]

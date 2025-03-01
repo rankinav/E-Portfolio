@@ -10,29 +10,28 @@ Capstone project for the MGEM program. This project involved classifying land co
 
 ## Classified land cover
 
+![](images/classified.png)
+
 Land cover on campus was classified using random forests in Python, from Planet SkySat satellite imagery and Vancouver public LiDAR.
-
-```{r leaflet, include = FALSE}
-library(dplyr); library(leaflet); library(terra)
-
-land_cover <- rast("C:/Users/rankinai.stu/OneDrive - UBC/Documents/GitHub/E-Portfolio-sample/images/campus_classified.tif")
-
-m <- leaflet(width = "100%") %>%
-  addProviderTiles("Esri.WorldImagery") %>%
-##  addRasterImage(land_cover, maxBytes = 10 * 2048 *2048) %>%
-  addScaleBar(position = c("bottomleft"))
-
-```
-
-```{r map, echo=FALSE}
-m
-```
 
 ![](images/feature_importance.png)
 
 The most important features in training the random forests classifier were the normalized difference vegetation index, a measure of vegetation derived from the red and near-infrared bands of the imagery, and the digital surface model, an elevation model of surface features derived from LiDAR.
 
 ## Connectivity modelling
+
+![](images/mean_connectivity.png)
+
+From the classified land cover map, human pedestrian and wildlife connectivity models were run and typical connectivity maps were created. Above is the mean connectivity values per 0.5x0.5 metre cell, calculated from combining connectivity model outputs for five different test species. Species resistance values per land cover class were reclassified according to the table below, where each value represents the relative resistance or difficulty each species has in moving through a cell of the associated land cover type.
+
+| Species | Forest | Low veg | Grass | Barren | Water | Artificial turf | Asphalt | Building | Shadow |
+|----|----|----|----|----|----|----|----|----|----|
+| Human pedestrian | 60 | 70 | 20 | 20 | 100 | 30 | 1 | 30 | 15 |
+| Pacific treefrog | 10 | 10 | 30 | 30 | 1 | 50 | 70 | 100 | 85 |
+| Little brown bat | 1 | 1 | 10 | 1 | 1 | 60 | 80 | 60 | 70 |
+| Band-tailed pigeon | 1 | 1 | 1 | 1 | 1 | 30 | 30 | 80 | 65 |
+| Grey squirrel | 1 | 10 | 10 | 10 | 100 | 30 | 50 | 90 | 70 |
+| Coyote | 10 | 10 | 10 | 10 | 100 | 60 | 30 | 100 | 70 |
 
 ## Additional code
 
@@ -52,14 +51,28 @@ with arcpy.da.UpdateCursor("buildings_clipped", field_names=["Shape_Area", "bldg
   
     ##for every row, if the row has a building area value, then the building max capacity is added to the new field
     for row in cursor:
-      
         if row[0] is not None:
             ##max capacity is building area * number of floors * 0.4 people per m^2
             row[3] = row[0] * row[2] * 0.4 
         else:
             pass
-
         cursor.updateRow(row)
 ```
 
-# 
+Configuration file for running Omniscape connectivity model in Julia, with coyote species-specific parameters.
+
+``` julia
+resistance_file = C:/Users/ranki/Documents/Grad/FCOR599/campus_resample_v2.tif
+radius = 100
+block_size = 21
+project_name = C:/Users/ranki/Documents/Grad/FCOR599/coyote_config/coyote_test
+
+source_from_resistance = true
+r_cutoff = 30
+reclassify_resistance = true
+reclass_table = C:/Users/ranki/Documents/Grad/FCOR599/coyote_config/coyote_reclass_table.txt
+calc_normalized_current = true
+
+precision = single
+solver = cholmod
+```

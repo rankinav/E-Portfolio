@@ -1,5 +1,5 @@
 ---
-title: "Content and deliverables"
+title: "Other work"
 format: html
 editor: visual
 ---
@@ -22,11 +22,15 @@ Data was accessed from open-source repositories maintained by the Toronto Region
 
 ## Lost Rivers of Toronto
 
+A project mapping historical lost and buried rivers in Toronto. Contributed digitized rivers from early 20th century historical maps and edited existing layers based on potential stream locations from elevation.
+
 ```{=html}
 <iframe width="100%" height="700" src="https://utoronto.maps.arcgis.com/apps/instant/basic/index.html?appid=4927b6de70a24c74ae4b7672c4a1a608" title="Lost Rivers of Toronto"></iframe>
 ```
 
 ## Southern Ontario historical maps
+
+A project mapping historical road networks across Southern Ontario. Contributed digitized lines
 
 ```{=html}
 <iframe width="100%" height="700" src="https://utoronto.maps.arcgis.com/apps/instant/basic/index.html?appid=21d76694d42d4b9e9cf5286d1f9ce8b9" title="Southern Ontario historical maps"></iframe>
@@ -34,7 +38,7 @@ Data was accessed from open-source repositories maintained by the Toronto Region
 
 ## Historical York County, 1923.
 
-A georeferenced historical map of York County, Ontario digitized from the University of Toronto Map and Data Library collection.
+A georeferenced historical map of York County, Ontario, digitized from the University of Toronto Map and Data Library collection.
 
 ```{=html}
 <iframe width="100%" height="700" src="https://utoronto.maps.arcgis.com/apps/mapviewer/index.html?webmap=8a39d0c62df54f58a8e929bc73a62caf" title="Digitized historical Guidal map of York County in Ontario"></iframe>

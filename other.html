@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Content and deliverables – Aidan’s E-Portfolio</title>
+<title>Other work – Aidan’s E-Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -100,28 +66,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-
-<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-
-<link href="site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
-
-<script src="site_libs/leaflet-1.3.1/leaflet.js"></script>
-
-<link href="site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
-
-<script src="site_libs/proj4-2.6.2/proj4.min.js"></script>
-
-<script src="site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-
-<link href="site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
-
-<script src="site_libs/leaflet-binding-2.2.2/leaflet.js"></script>
-
-<script src="site_libs/leaflet-providers-2.0.0/leaflet-providers_2.0.0.js"></script>
-
-<script src="site_libs/leaflet-providers-plugin-2.2.2/leaflet-providers-plugin.js"></script>
-
 
 
 <link rel="stylesheet" href="styles.css">
@@ -180,12 +124,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#modelling-ecological-connectivity-on-the-ubc-campus" id="toc-modelling-ecological-connectivity-on-the-ubc-campus" class="nav-link active" data-scroll-target="#modelling-ecological-connectivity-on-the-ubc-campus">Modelling ecological connectivity on the UBC campus</a>
-  <ul class="collapse">
-  <li><a href="#classified-land-cover" id="toc-classified-land-cover" class="nav-link" data-scroll-target="#classified-land-cover">Classified land cover</a></li>
-  <li><a href="#additional-code" id="toc-additional-code" class="nav-link" data-scroll-target="#additional-code">Additional code</a></li>
-  </ul></li>
-  <li><a href="#urban-ecology-stream-temperature-as-a-function-of-impermeable-land-cover" id="toc-urban-ecology-stream-temperature-as-a-function-of-impermeable-land-cover" class="nav-link" data-scroll-target="#urban-ecology-stream-temperature-as-a-function-of-impermeable-land-cover">Urban ecology: stream temperature as a function of impermeable land cover</a>
+  <li><a href="#urban-ecology-stream-temperature-as-a-function-of-impermeable-land-cover" id="toc-urban-ecology-stream-temperature-as-a-function-of-impermeable-land-cover" class="nav-link active" data-scroll-target="#urban-ecology-stream-temperature-as-a-function-of-impermeable-land-cover">Urban ecology: stream temperature as a function of impermeable land cover</a>
   <ul class="collapse">
   <li><a href="#abstract" id="toc-abstract" class="nav-link" data-scroll-target="#abstract">Abstract:</a></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results:</a></li>
@@ -201,11 +140,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#local-green-space-in-my-neighbourhood-in-toronto." id="toc-local-green-space-in-my-neighbourhood-in-toronto." class="nav-link" data-scroll-target="#local-green-space-in-my-neighbourhood-in-toronto.">Local green space in my neighbourhood in Toronto.</a></li>
   <li><a href="#bicycle-rack-locations-and-reported-bicycle-thefts-in-toronto." id="toc-bicycle-rack-locations-and-reported-bicycle-thefts-in-toronto." class="nav-link" data-scroll-target="#bicycle-rack-locations-and-reported-bicycle-thefts-in-toronto.">Bicycle rack locations and reported bicycle thefts in Toronto.</a></li>
   </ul></li>
-  <li><a href="#other-project-deliverables" id="toc-other-project-deliverables" class="nav-link" data-scroll-target="#other-project-deliverables">Other project deliverables</a>
-  <ul class="collapse">
-  <li><a href="#mapping-the-impact-of-hydroelectric-dams-on-salmon-habitat-access-on-vancouver-island" id="toc-mapping-the-impact-of-hydroelectric-dams-on-salmon-habitat-access-on-vancouver-island" class="nav-link" data-scroll-target="#mapping-the-impact-of-hydroelectric-dams-on-salmon-habitat-access-on-vancouver-island">Mapping the impact of hydroelectric dams on salmon habitat access on Vancouver Island</a></li>
-  <li><a href="#mapping-least-cost-paths-for-grizzly-bear-management-in-an-alberta-conservation-unit" id="toc-mapping-least-cost-paths-for-grizzly-bear-management-in-an-alberta-conservation-unit" class="nav-link" data-scroll-target="#mapping-least-cost-paths-for-grizzly-bear-management-in-an-alberta-conservation-unit">Mapping least cost paths for Grizzly bear management in an Alberta conservation unit</a></li>
-  </ul></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
   </ul>
 </nav>
     </div>
@@ -214,7 +149,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Content and deliverables</h1>
+<h1 class="title">Other work</h1>
 </div>
 
 
@@ -231,45 +166,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="modelling-ecological-connectivity-on-the-ubc-campus" class="level1">
-<h1>Modelling ecological connectivity on the UBC campus</h1>
-<p>Capstone project for the MGEM program. This project involved classifying land cover at the University of British Columbia Vancouver campus and then modelling animal and human movement across the landscape to identify points of potential conflict and potential corridors to promote coexistence.</p>
-<section id="classified-land-cover" class="level2">
-<h2 class="anchored" data-anchor-id="classified-land-cover">Classified land cover</h2>
-<p>Sample leaflet - for detailed leaflet instructions, visit the FCOR 599 workshop archive page <a href="https://ubc-mgem-fcor599.github.io/FCOR-599-Workshops/Interactive_Maps/leaflet.html">here</a>.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="htmlwidget-7090f081683ef7be5687" style="width:100%;height:480px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-7090f081683ef7be5687">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addScaleBar","args":[{"maxWidth":100,"metric":true,"imperial":true,"updateWhenIdle":true,"position":"bottomleft"}]}]},"evals":[],"jsHooks":[]}</script>
-</div>
-</div>
-</section>
-<section id="additional-code" class="level2">
-<h2 class="anchored" data-anchor-id="additional-code">Additional code</h2>
-<p>Python Arcpy cursor used to generate building capacity numbers based on building code limits to estimate human presence numbers within each building on campus.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">##checks if there is already a field for building capacity created</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">"capacity"</span> <span class="kw">not</span> <span class="kw">in</span> [f.name <span class="cf">for</span> f <span class="kw">in</span> arcpy.ListFields(<span class="st">"buildings_clipped"</span>)]:</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">##creates new field in attribute table</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    arcpy.management.AddField(in_table<span class="op">=</span><span class="st">"buildings_clipped"</span>,</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                              field_name<span class="op">=</span><span class="st">"capacity"</span>, </span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>                              field_type<span class="op">=</span><span class="st">"FLOAT"</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">##creating update cursor for buildings_clipped feature, looking at four specific fields</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> arcpy.da.UpdateCursor(<span class="st">"buildings_clipped"</span>, field_names<span class="op">=</span>[<span class="st">"Shape_Area"</span>, <span class="st">"bldg_usage"</span>, <span class="st">"max_floors"</span>, <span class="st">"capacity"</span>]) <span class="im">as</span> cursor:</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">##for every row, if the row has a building area value, then the building max capacity is added to the new field</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> cursor:</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> row[<span class="dv">0</span>] <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>            <span class="co">##max capacity is building area * number of floors * 0.4 people per m^2</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>            row[<span class="dv">3</span>] <span class="op">=</span> row[<span class="dv">0</span>] <span class="op">*</span> row[<span class="dv">2</span>] <span class="op">*</span> <span class="fl">0.4</span> </span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>            <span class="cf">pass</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>        cursor.updateRow(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</section>
 <section id="urban-ecology-stream-temperature-as-a-function-of-impermeable-land-cover" class="level1">
 <h1>Urban ecology: stream temperature as a function of impermeable land cover</h1>
 <section id="abstract" class="level2">
@@ -287,15 +183,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Historical GIS data curation and digitization</h1>
 <section id="lost-rivers-of-toronto" class="level2">
 <h2 class="anchored" data-anchor-id="lost-rivers-of-toronto">Lost Rivers of Toronto</h2>
+<p>A project mapping historical lost and buried rivers in Toronto. Contributed digitized rivers from early 20th century historical maps and edited existing layers based on potential stream locations from elevation.</p>
 <iframe width="100%" height="700" src="https://utoronto.maps.arcgis.com/apps/instant/basic/index.html?appid=4927b6de70a24c74ae4b7672c4a1a608" title="Lost Rivers of Toronto"></iframe>
 </section>
 <section id="southern-ontario-historical-maps" class="level2">
 <h2 class="anchored" data-anchor-id="southern-ontario-historical-maps">Southern Ontario historical maps</h2>
+<p>A project mapping historical road networks across Southern Ontario. Contributed digitized lines</p>
 <iframe width="100%" height="700" src="https://utoronto.maps.arcgis.com/apps/instant/basic/index.html?appid=21d76694d42d4b9e9cf5286d1f9ce8b9" title="Southern Ontario historical maps"></iframe>
 </section>
 <section id="historical-york-county-1923." class="level2">
 <h2 class="anchored" data-anchor-id="historical-york-county-1923.">Historical York County, 1923.</h2>
-<p>A georeferenced historical map of York County, Ontario digitized from the University of Toronto Map and Data Library collection.</p>
+<p>A georeferenced historical map of York County, Ontario, digitized from the University of Toronto Map and Data Library collection.</p>
 <iframe width="100%" height="700" src="https://utoronto.maps.arcgis.com/apps/mapviewer/index.html?webmap=8a39d0c62df54f58a8e929bc73a62caf" title="Digitized historical Guidal map of York County in Ontario"></iframe>
 </section>
 </section>
@@ -313,18 +211,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <iframe width="100%" height="700" src="https://utoronto.maps.arcgis.com/apps/instant/basic/index.html?appid=993887d367224628bda6246c22f0558e" title="Heat map of bicycle racks and reported bicycle thefts in Toronto"></iframe>
 </section>
 </section>
-<section id="other-project-deliverables" class="level1">
-<h1>Other project deliverables</h1>
-<section id="mapping-the-impact-of-hydroelectric-dams-on-salmon-habitat-access-on-vancouver-island" class="level2">
-<h2 class="anchored" data-anchor-id="mapping-the-impact-of-hydroelectric-dams-on-salmon-habitat-access-on-vancouver-island">Mapping the impact of hydroelectric dams on salmon habitat access on Vancouver Island</h2>
-<p><img src="images/dams_map.png" class="img-fluid"></p>
-</section>
-<section id="mapping-least-cost-paths-for-grizzly-bear-management-in-an-alberta-conservation-unit" class="level2">
-<h2 class="anchored" data-anchor-id="mapping-least-cost-paths-for-grizzly-bear-management-in-an-alberta-conservation-unit">Mapping least cost paths for Grizzly bear management in an Alberta conservation unit</h2>
-<p><img src="images/GEM510_Lab5.png" class="img-fluid"></p>
+<section id="section" class="level1">
+<h1></h1>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

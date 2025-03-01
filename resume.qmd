@@ -2,32 +2,6 @@
 title: "Resume"
 ---
 
-# Education
-
-**Honours Bachelor of Science, Biodiversity and Conservation Biology.**
-
-*University of Toronto. 2023.*
-
--   Minors - Geographic Information Systems, Philosophy
-
--   Relevant coursework:
-
-    -   
-
-**Master of Geomatics for Environmental Management.**
-
-*University of British Columbia. 2025.*
-
-# Work Experience
-
-**GIS Library Assistant**
-
-University of Toronto Map and Data Library, May 2022-October 2023
-
--   Assisted with special GIS projects
--   Prepared geospatial data, including digitizing and georeferencing historical maps
--   Produced web maps for presentation and display
-
-# Institutional Service
-
--   Volunteering etc.
+```{=html} 
+<iframe class="scribd_iframe_embed" title="GIS Resume 2025" src="https://www.scribd.com/embeds/834031183/content?start_page=1&view_mode=scroll&access_key=key-DPzWWQNFDf02MS3QtxPi&scribd_rebrand=true" tabindex="0" data-auto-height="true" data-aspect-ratio="0.7729220222793488" scrolling="no" width="100%" height="600" frameborder="0" ></iframe> <p style="margin: 12px auto 6px auto; font-family: Helvetica,Arial,Sans-serif; font-size: 14px; line-height: normal; display: block;"> <a title="View GIS Resume 2023 on Scribd" href="https://www.scribd.com/document/834031183/GIS-Resume-2023#from_embed" style="text-decoration: underline;"> GIS Resume 2023 </a> by <a title="View rankina001's profile on Scribd" href="https://www.scribd.com/user/842686140/rankina001#from_embed" style="text-decoration: underline;" > rankina001 </a> </p> 
+```

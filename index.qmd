@@ -1,6 +1,5 @@
 ---
-title: "Your E-Portfolio"
-image: images/aiden.gif
+title: "Aidan's E-Portfolio"
 about:
   template: trestles
   image-width: 20em

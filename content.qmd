@@ -4,13 +4,56 @@ format: html
 editor: visual
 ---
 
-# Other project deliverables
+# Other courses and project deliverables
 
-## Mapping the impact of hydroelectric dams on salmon habitat access on Vancouver Island
+The MGEM program covered a wide breadth of topics related to GIS, remote sensing, ecology, and environmental management challenges. Below are some deliverables from many of the courses.
 
-![](images/dams_map.png)
+## Geographic Information Systems for Environmental Management
 
-## Mapping least cost paths for Grizzly bear management in an Alberta conservation unit
+### Deliverable maps
+
+Mapping the impact of hydroelectric dams on salmon habitat access on Vancouver Island.
+
+![](images/dams_map.png) Mapping least cost paths for Grizzly bear management in an Alberta conservation unit.
 
 ![](images/GEM510_Lab5.png)
 
+## Remote Sensing and Advanced Earth Observation
+
+Code snippet of a function to calculate reflectance in Landsat bandwidths from raw reflectance values.
+
+``` r
+landsat_band <- function(df, lwr, upr, centre) { ##function to calculate each landsat band value
+  df[df$wavelength>=lwr&df$wavelength<=upr,] %>% ##selects values between given lower and upper wavelengths
+    mutate(mixel_1 = mean(mixel_1), ##converts each pixel value to the mean of the chosen wavelengths
+           mixel_2 = mean(mixel_2),
+           mixel_3 = mean(mixel_3),
+           mixel_4 = mean(mixel_4),
+           mixel_5 = mean(mixel_5),
+           wavelength = centre) %>% ##converts wavelength value to the value of the centre of the band
+    slice(1) ##removes extraneous identical rows
+}
+
+landsat_b1 <- landsat_band(spectra_mixed_wide, 450, 520, 485) ##apply function for each band
+landsat_b2 <- landsat_band(spectra_mixed_wide, 520, 600, 560)
+landsat_b3 <- landsat_band(spectra_mixed_wide, 630, 690, 660)
+landsat_b4 <- landsat_band(spectra_mixed_wide, 770, 900, 835) 
+landsat_b5 <- landsat_band(spectra_mixed_wide, 1550, 1750, 1650)
+landsat_b7 <- landsat_band(spectra_mixed_wide, 2090, 2350, 2220)
+```
+
+## Landscape Ecology
+
+A proposed project connecting landscape ecology concepts like ecological connectivity, landscape fragmentation, and species dispersal, with remote sensing techniques and data sources.
+
+```{=html}
+ <iframe class="scribd_iframe_embed" title="Landscape Ecology project proposal" src="https://www.scribd.com/embeds/834039755/content?start_page=1&view_mode=scroll&access_key=key-2FnofZ53aiyZgWNgUf1g&scribd_rebrand=true" tabindex="0" data-auto-height="true" data-aspect-ratio="0.7729220222793488" scrolling="no" width="100%" height="600" frameborder="0" ></iframe> <p style="margin: 12px auto 6px auto; font-family: Helvetica,Arial,Sans-serif; font-size: 14px; line-height: normal; display: block;"> <a title="View Landscape Ecology project proposal on Scribd" href="https://www.scribd.com/document/834039755/Landscape-Ecology-project-proposal#from_embed" style="text-decoration: underline;"> Landscape Ecology project proposal </a> by <a title="View rankina001's profile on Scribd" href="https://www.scribd.com/user/842686140/rankina001#from_embed" style="text-decoration: underline;" > rankina001 </a> </p> 
+```
+ 
+## Professional Communication and Diverse Knowledge Systems
+
+A study of communication techniques utilized in a town hall meeting on a pressing Ontario environmental issue.
+
+```{=html} 
+<iframe class="scribd_iframe_embed" title="FCOR510 Audience Analysis" src="https://www.scribd.com/embeds/834058303/content?start_page=1&view_mode=scroll&access_key=key-lVe7UjtI0rvUjWK1HQVy&scribd_rebrand=true" tabindex="0" data-auto-height="true" data-aspect-ratio="0.7729220222793488" scrolling="no" width="100%" height="600" frameborder="0" ></iframe> <p style="margin: 12px auto 6px auto; font-family: Helvetica,Arial,Sans-serif; font-size: 14px; line-height: normal; display: block;"> <a title="View FCOR510 Audience Analysis on Scribd" href="https://www.scribd.com/document/834058303/FCOR510-Audience-Analysis#from_embed" style="text-decoration: underline;"> FCOR510 Audience Analysis </a> by <a title="View rankina001's profile on Scribd" href="https://www.scribd.com/user/842686140/rankina001#from_embed" style="text-decoration: underline;" > rankina001 </a> </p> 
+```
