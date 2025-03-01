@@ -3,15 +3,19 @@ project:
   output-dir: C:/Users/rankinai.stu/OneDrive - UBC/Documents/GitHub/E-Portfolio-sample
 
 website:
-  title: "Your E-Portfolio"
+  title: "Aidan's E-Portfolio"
   navbar:
     left:
       - href: index.qmd
         text: Home
       - href: resume.qmd
         text: Resume
+      - href: project.qmd
+        text: Capstone project
       - href: content.qmd
-        text: Content & Deliverables
+        text: Content & deliverables
+      - href: other.qmd
+        text: Other work
 
 format:
   html:

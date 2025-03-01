@@ -152,5 +152,110 @@
     "title": "Content and deliverables",
     "section": "Southern Ontario historical maps",
     "text": "Southern Ontario historical maps"
+  },
+  {
+    "objectID": "project.html",
+    "href": "project.html",
+    "title": "Capstone project",
+    "section": "",
+    "text": "Capstone project for the MGEM program. This project involved classifying land cover at the University of British Columbia Vancouver campus and then modelling animal and human movement across the landscape to identify points of potential conflict and potential corridors to promote coexistence.\n\n\nLand cover on campus was classified using random forests in Python, from Planet SkySat satellite imagery and Vancouver public LiDAR.\n\n\n\n\n\n\n\nThe most important features in training the random forests classifier were the normalized difference vegetation index, a measure of vegetation derived from the red and near-infrared bands of the imagery, and the digital surface model, an elevation model of surface features derived from LiDAR.\n\n\n\n\n\n\nPython Arcpy cursor used to generate building capacity numbers based on building code limits to estimate human presence numbers within each building on campus.\n##checks if there is already a field for building capacity created\nif \"capacity\" not in [f.name for f in arcpy.ListFields(\"buildings_clipped\")]:\n  \n    ##creates new field in attribute table\n    arcpy.management.AddField(in_table=\"buildings_clipped\",\n                              field_name=\"capacity\", \n                              field_type=\"FLOAT\")\n\n##creating update cursor for buildings_clipped feature, looking at four specific fields\nwith arcpy.da.UpdateCursor(\"buildings_clipped\", field_names=[\"Shape_Area\", \"bldg_usage\", \"max_floors\", \"capacity\"]) as cursor:\n  \n    ##for every row, if the row has a building area value, then the building max capacity is added to the new field\n    for row in cursor:\n      \n        if row[0] is not None:\n            ##max capacity is building area * number of floors * 0.4 people per m^2\n            row[3] = row[0] * row[2] * 0.4 \n        else:\n            pass\n\n        cursor.updateRow(row)"
+  },
+  {
+    "objectID": "project.html#classified-land-cover",
+    "href": "project.html#classified-land-cover",
+    "title": "Capstone project",
+    "section": "",
+    "text": "Land cover on campus was classified using random forests in Python, from Planet SkySat satellite imagery and Vancouver public LiDAR.\n\n\n\n\n\n\n\nThe most important features in training the random forests classifier were the normalized difference vegetation index, a measure of vegetation derived from the red and near-infrared bands of the imagery, and the digital surface model, an elevation model of surface features derived from LiDAR."
+  },
+  {
+    "objectID": "project.html#additional-code",
+    "href": "project.html#additional-code",
+    "title": "Capstone project",
+    "section": "",
+    "text": "Python Arcpy cursor used to generate building capacity numbers based on building code limits to estimate human presence numbers within each building on campus.\n##checks if there is already a field for building capacity created\nif \"capacity\" not in [f.name for f in arcpy.ListFields(\"buildings_clipped\")]:\n  \n    ##creates new field in attribute table\n    arcpy.management.AddField(in_table=\"buildings_clipped\",\n                              field_name=\"capacity\", \n                              field_type=\"FLOAT\")\n\n##creating update cursor for buildings_clipped feature, looking at four specific fields\nwith arcpy.da.UpdateCursor(\"buildings_clipped\", field_names=[\"Shape_Area\", \"bldg_usage\", \"max_floors\", \"capacity\"]) as cursor:\n  \n    ##for every row, if the row has a building area value, then the building max capacity is added to the new field\n    for row in cursor:\n      \n        if row[0] is not None:\n            ##max capacity is building area * number of floors * 0.4 people per m^2\n            row[3] = row[0] * row[2] * 0.4 \n        else:\n            pass\n\n        cursor.updateRow(row)"
+  },
+  {
+    "objectID": "other.html",
+    "href": "other.html",
+    "title": "Content and deliverables",
+    "section": "",
+    "text": "Capstone project for the MGEM program. This project involved classifying land cover at the University of British Columbia Vancouver campus and then modelling animal and human movement across the landscape to identify points of potential conflict and potential corridors to promote coexistence.\n\n\nSample leaflet - for detailed leaflet instructions, visit the FCOR 599 workshop archive page here.\n\n\n\n\n\n\n\n\n\nPython Arcpy cursor used to generate building capacity numbers based on building code limits to estimate human presence numbers within each building on campus.\n##checks if there is already a field for building capacity created\nif \"capacity\" not in [f.name for f in arcpy.ListFields(\"buildings_clipped\")]:\n  \n    ##creates new field in attribute table\n    arcpy.management.AddField(in_table=\"buildings_clipped\",\n                              field_name=\"capacity\", \n                              field_type=\"FLOAT\")\n\n##creating update cursor for buildings_clipped feature, looking at four specific fields\nwith arcpy.da.UpdateCursor(\"buildings_clipped\", field_names=[\"Shape_Area\", \"bldg_usage\", \"max_floors\", \"capacity\"]) as cursor:\n  \n    ##for every row, if the row has a building area value, then the building max capacity is added to the new field\n    for row in cursor:\n      \n        if row[0] is not None:\n            ##max capacity is building area * number of floors * 0.4 people per m^2\n            row[3] = row[0] * row[2] * 0.4 \n        else:\n            pass\n\n        cursor.updateRow(row)"
+  },
+  {
+    "objectID": "other.html#classified-land-cover",
+    "href": "other.html#classified-land-cover",
+    "title": "Content and deliverables",
+    "section": "",
+    "text": "Sample leaflet - for detailed leaflet instructions, visit the FCOR 599 workshop archive page here."
+  },
+  {
+    "objectID": "other.html#additional-code",
+    "href": "other.html#additional-code",
+    "title": "Content and deliverables",
+    "section": "",
+    "text": "Python Arcpy cursor used to generate building capacity numbers based on building code limits to estimate human presence numbers within each building on campus.\n##checks if there is already a field for building capacity created\nif \"capacity\" not in [f.name for f in arcpy.ListFields(\"buildings_clipped\")]:\n  \n    ##creates new field in attribute table\n    arcpy.management.AddField(in_table=\"buildings_clipped\",\n                              field_name=\"capacity\", \n                              field_type=\"FLOAT\")\n\n##creating update cursor for buildings_clipped feature, looking at four specific fields\nwith arcpy.da.UpdateCursor(\"buildings_clipped\", field_names=[\"Shape_Area\", \"bldg_usage\", \"max_floors\", \"capacity\"]) as cursor:\n  \n    ##for every row, if the row has a building area value, then the building max capacity is added to the new field\n    for row in cursor:\n      \n        if row[0] is not None:\n            ##max capacity is building area * number of floors * 0.4 people per m^2\n            row[3] = row[0] * row[2] * 0.4 \n        else:\n            pass\n\n        cursor.updateRow(row)"
+  },
+  {
+    "objectID": "other.html#abstract",
+    "href": "other.html#abstract",
+    "title": "Content and deliverables",
+    "section": "Abstract:",
+    "text": "Abstract:\nIncreased impermeable surface cover increases runoff and temperatures in urban streams with ecological implications. Analysis of impermeable surface area at sites in Toronto region watersheds was carried out to test the relevance of this relationship. Surface impermeability is correlated with mean stream temperature at large scales, but minimum and maximum temperatures display no relationship. This may be due to the homogeneous urban landscape, the impact of cool water entering upstream at headwaters, or other physical characteristics of urban streams."
+  },
+  {
+    "objectID": "other.html#results",
+    "href": "other.html#results",
+    "title": "Content and deliverables",
+    "section": "Results:",
+    "text": "Results:\n\nData was accessed from open-source repositories maintained by the Toronto Region Conservation Authority and the Province of Ontario Geohub."
+  },
+  {
+    "objectID": "other.html#lost-rivers-of-toronto",
+    "href": "other.html#lost-rivers-of-toronto",
+    "title": "Content and deliverables",
+    "section": "Lost Rivers of Toronto",
+    "text": "Lost Rivers of Toronto"
+  },
+  {
+    "objectID": "other.html#southern-ontario-historical-maps",
+    "href": "other.html#southern-ontario-historical-maps",
+    "title": "Content and deliverables",
+    "section": "Southern Ontario historical maps",
+    "text": "Southern Ontario historical maps"
+  },
+  {
+    "objectID": "other.html#historical-york-county-1923.",
+    "href": "other.html#historical-york-county-1923.",
+    "title": "Content and deliverables",
+    "section": "Historical York County, 1923.",
+    "text": "Historical York County, 1923.\nA georeferenced historical map of York County, Ontario digitized from the University of Toronto Map and Data Library collection."
+  },
+  {
+    "objectID": "other.html#local-green-space-in-my-neighbourhood-in-toronto.",
+    "href": "other.html#local-green-space-in-my-neighbourhood-in-toronto.",
+    "title": "Content and deliverables",
+    "section": "Local green space in my neighbourhood in Toronto.",
+    "text": "Local green space in my neighbourhood in Toronto.\nAn ESRI story map incorporating map elements, text, and photos."
+  },
+  {
+    "objectID": "other.html#bicycle-rack-locations-and-reported-bicycle-thefts-in-toronto.",
+    "href": "other.html#bicycle-rack-locations-and-reported-bicycle-thefts-in-toronto.",
+    "title": "Content and deliverables",
+    "section": "Bicycle rack locations and reported bicycle thefts in Toronto.",
+    "text": "Bicycle rack locations and reported bicycle thefts in Toronto.\nAn instant app created for a course project."
+  },
+  {
+    "objectID": "other.html#mapping-the-impact-of-hydroelectric-dams-on-salmon-habitat-access-on-vancouver-island",
+    "href": "other.html#mapping-the-impact-of-hydroelectric-dams-on-salmon-habitat-access-on-vancouver-island",
+    "title": "Content and deliverables",
+    "section": "Mapping the impact of hydroelectric dams on salmon habitat access on Vancouver Island",
+    "text": "Mapping the impact of hydroelectric dams on salmon habitat access on Vancouver Island"
+  },
+  {
+    "objectID": "other.html#mapping-least-cost-paths-for-grizzly-bear-management-in-an-alberta-conservation-unit",
+    "href": "other.html#mapping-least-cost-paths-for-grizzly-bear-management-in-an-alberta-conservation-unit",
+    "title": "Content and deliverables",
+    "section": "Mapping least cost paths for Grizzly bear management in an Alberta conservation unit",
+    "text": "Mapping least cost paths for Grizzly bear management in an Alberta conservation unit"
   }
 ]

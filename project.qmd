@@ -1,0 +1,65 @@
+---
+title: "Capstone project"
+format: html
+editor: visual
+---
+
+# Modelling ecological connectivity on the UBC campus
+
+Capstone project for the MGEM program. This project involved classifying land cover at the University of British Columbia Vancouver campus and then modelling animal and human movement across the landscape to identify points of potential conflict and potential corridors to promote coexistence.
+
+## Classified land cover
+
+Land cover on campus was classified using random forests in Python, from Planet SkySat satellite imagery and Vancouver public LiDAR.
+
+```{r leaflet, include = FALSE}
+library(dplyr); library(leaflet); library(terra)
+
+land_cover <- rast("C:/Users/rankinai.stu/OneDrive - UBC/Documents/GitHub/E-Portfolio-sample/images/campus_classified.tif")
+
+m <- leaflet(width = "100%") %>%
+  addProviderTiles("Esri.WorldImagery") %>%
+##  addRasterImage(land_cover, maxBytes = 10 * 2048 *2048) %>%
+  addScaleBar(position = c("bottomleft"))
+
+```
+
+```{r map, echo=FALSE}
+m
+```
+
+![](images/feature_importance.png)
+
+The most important features in training the random forests classifier were the normalized difference vegetation index, a measure of vegetation derived from the red and near-infrared bands of the imagery, and the digital surface model, an elevation model of surface features derived from LiDAR.
+
+## Connectivity modelling
+
+## Additional code
+
+Python Arcpy cursor used to generate building capacity numbers based on building code limits to estimate human presence numbers within each building on campus.
+
+``` python
+##checks if there is already a field for building capacity created
+if "capacity" not in [f.name for f in arcpy.ListFields("buildings_clipped")]:
+  
+    ##creates new field in attribute table
+    arcpy.management.AddField(in_table="buildings_clipped",
+                              field_name="capacity", 
+                              field_type="FLOAT")
+
+##creating update cursor for buildings_clipped feature, looking at four specific fields
+with arcpy.da.UpdateCursor("buildings_clipped", field_names=["Shape_Area", "bldg_usage", "max_floors", "capacity"]) as cursor:
+  
+    ##for every row, if the row has a building area value, then the building max capacity is added to the new field
+    for row in cursor:
+      
+        if row[0] is not None:
+            ##max capacity is building area * number of floors * 0.4 people per m^2
+            row[3] = row[0] * row[2] * 0.4 
+        else:
+            pass
+
+        cursor.updateRow(row)
+```
+
+# 

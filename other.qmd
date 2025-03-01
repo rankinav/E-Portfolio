@@ -1,0 +1,63 @@
+---
+title: "Content and deliverables"
+format: html
+editor: visual
+---
+
+# Urban ecology: stream temperature as a function of impermeable land cover
+
+## Abstract:
+
+Increased impermeable surface cover increases runoff and temperatures in urban streams with ecological implications. Analysis of impermeable surface area at sites in Toronto region watersheds was carried out to test the relevance of this relationship. Surface impermeability is correlated with mean stream temperature at large scales, but minimum and maximum temperatures display no relationship. This may be due to the homogeneous urban landscape, the impact of cool water entering upstream at headwaters, or other physical characteristics of urban streams.
+
+## Results:
+
+![](images/stream_temp.png)
+
+Data was accessed from open-source repositories maintained by the Toronto Region Conservation Authority and the Province of Ontario Geohub.
+
+![](images/stream_plots.png)
+
+# Historical GIS data curation and digitization
+
+## Lost Rivers of Toronto
+
+```{=html}
+<iframe width="100%" height="700" src="https://utoronto.maps.arcgis.com/apps/instant/basic/index.html?appid=4927b6de70a24c74ae4b7672c4a1a608" title="Lost Rivers of Toronto"></iframe>
+```
+
+## Southern Ontario historical maps
+
+```{=html}
+<iframe width="100%" height="700" src="https://utoronto.maps.arcgis.com/apps/instant/basic/index.html?appid=21d76694d42d4b9e9cf5286d1f9ce8b9" title="Southern Ontario historical maps"></iframe>
+```
+
+## Historical York County, 1923.
+
+A georeferenced historical map of York County, Ontario digitized from the University of Toronto Map and Data Library collection.
+
+```{=html}
+<iframe width="100%" height="700" src="https://utoronto.maps.arcgis.com/apps/mapviewer/index.html?webmap=8a39d0c62df54f58a8e929bc73a62caf" title="Digitized historical Guidal map of York County in Ontario"></iframe>
+```
+
+# Other web maps
+
+Other web mapping applications I have worked on include:
+
+## Local green space in my neighbourhood in Toronto.
+
+An ESRI story map incorporating map elements, text, and photos.
+
+```{=html}
+<iframe src="https://storymaps.arcgis.com/stories/96512eb36b78413984c15506cd1b4f55" width="100%" height="700px" frameborder="0" allowfullscreen allow="geolocation"></iframe>
+```
+
+## Bicycle rack locations and reported bicycle thefts in Toronto.
+
+An instant app created for a course project.
+
+```{=html}
+<iframe width="100%" height="700" src="https://utoronto.maps.arcgis.com/apps/instant/basic/index.html?appid=993887d367224628bda6246c22f0558e" title="Heat map of bicycle racks and reported bicycle thefts in Toronto"></iframe>
+```
+
+# 
