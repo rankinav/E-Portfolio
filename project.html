@@ -162,6 +162,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#classified-land-cover" id="toc-classified-land-cover" class="nav-link" data-scroll-target="#classified-land-cover">Classified land cover</a></li>
   <li><a href="#connectivity-modelling" id="toc-connectivity-modelling" class="nav-link" data-scroll-target="#connectivity-modelling">Connectivity modelling</a></li>
+  <li><a href="#mapping-conflict" id="toc-mapping-conflict" class="nav-link" data-scroll-target="#mapping-conflict">Mapping conflict</a></li>
   <li><a href="#additional-code" id="toc-additional-code" class="nav-link" data-scroll-target="#additional-code">Additional code</a></li>
   </ul></li>
   </ul>
@@ -191,7 +192,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="modelling-ecological-connectivity-on-the-ubc-campus" class="level1">
 <h1>Modelling ecological connectivity on the UBC campus</h1>
-<p>Capstone project for the MGEM program. This project involved classifying land cover at the University of British Columbia Vancouver campus and then modelling animal and human movement across the landscape to identify points of potential conflict and potential corridors to promote coexistence.</p>
+<p>Capstone project for the MGEM program. This study investigates sites of overlap between human and wildlife movement across the UBC Vancouver campus to identify and avoid human-wildlife conflict. First, Planet SkySat satellite imagery and public LiDAR data are utilized to create classified land cover maps of the campus. These classified land cover rasters are then used as resistance surfaces for omnidirectional circuit-based connectivity modelling to understand how humans and wildlife move across campus. Finally, human and wildlife connectivity are compared to identify sites of overlap.</p>
 <section id="classified-land-cover" class="level2">
 <h2 class="anchored" data-anchor-id="classified-land-cover">Classified land cover</h2>
 <p><img src="images/classified.png" class="img-fluid"></p>
@@ -201,7 +202,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="connectivity-modelling" class="level2">
 <h2 class="anchored" data-anchor-id="connectivity-modelling">Connectivity modelling</h2>
-<p><img src="images/mean_connectivity.png" class="img-fluid"></p>
+<p><img src="images/ecological_connectivity.png" class="img-fluid"></p>
 <p>From the classified land cover map, human pedestrian and wildlife connectivity models were run and typical connectivity maps were created. Above is the mean connectivity values per 0.5x0.5 metre cell, calculated from combining connectivity model outputs for five different test species. Species resistance values per land cover class were reclassified according to the table below, where each value represents the relative resistance or difficulty each species has in moving through a cell of the associated land cover type.</p>
 <table class="caption-top table">
 <colgroup>
@@ -305,6 +306,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
+</section>
+<section id="mapping-conflict" class="level2">
+<h2 class="anchored" data-anchor-id="mapping-conflict">Mapping conflict</h2>
+<p><img src="images/conflict.png" class="img-fluid"></p>
+<p>By overlaying connectivity models and incorporating other known conflict factors like traffic volume, it is possible to predict where humans and wildlife movement currently overlaps. Conflict between humans and wildlife follows closely the maps of human pedestrian and vehicle traffic volume, and the top sites of potential conflict are at the edges of campus green spaces and along roads where wildlife movement is forced across more costly land cover types that humans occupy.</p>
 </section>
 <section id="additional-code" class="level2">
 <h2 class="anchored" data-anchor-id="additional-code">Additional code</h2>

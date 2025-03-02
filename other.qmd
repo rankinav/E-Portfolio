@@ -6,6 +6,8 @@ editor: visual
 
 # Urban ecology: stream temperature as a function of impermeable land cover
 
+An undergraduate project completed for a fourth-year urban ecology course, and a rare opportunity I took to combine my interests and incorporate GIS skills in an ecology project.
+
 ## Abstract:
 
 Increased impermeable surface cover increases runoff and temperatures in urban streams with ecological implications. Analysis of impermeable surface area at sites in Toronto region watersheds was carried out to test the relevance of this relationship. Surface impermeability is correlated with mean stream temperature at large scales, but minimum and maximum temperatures display no relationship. This may be due to the homogeneous urban landscape, the impact of cool water entering upstream at headwaters, or other physical characteristics of urban streams.
@@ -18,11 +20,15 @@ Data was accessed from open-source repositories maintained by the Toronto Region
 
 ![](images/stream_plots.png)
 
+Tenuous correlation between percent impermeable cover within two buffer areas around a stream data collection site, and stream temperature.
+
 # Historical GIS data curation and digitization
+
+Before MGEM, I was working at the University of Toronto's Map and Data Library as a GIS assistant, mostly on historical projects where I digitized features, and georeferenced scanned historical paper maps.
 
 ## Lost Rivers of Toronto
 
-A project mapping historical lost and buried rivers in Toronto. Contributed digitized rivers from early 20th century historical maps and edited existing layers based on potential stream locations from elevation.
+A project mapping historical lost and buried rivers in Toronto. I contributed digitized rivers from early 20th century historical maps and edited existing layers based on potential stream locations from elevation.
 
 ```{=html}
 <iframe width="100%" height="700" src="https://utoronto.maps.arcgis.com/apps/instant/basic/index.html?appid=4927b6de70a24c74ae4b7672c4a1a608" title="Lost Rivers of Toronto"></iframe>
@@ -30,13 +36,13 @@ A project mapping historical lost and buried rivers in Toronto. Contributed digi
 
 ## Southern Ontario historical maps
 
-A project mapping historical road networks across Southern Ontario. Contributed digitized lines
+A project mapping historical road networks across Southern Ontario. I contributed digitized lines and managed and digitized attributes.
 
 ```{=html}
 <iframe width="100%" height="700" src="https://utoronto.maps.arcgis.com/apps/instant/basic/index.html?appid=21d76694d42d4b9e9cf5286d1f9ce8b9" title="Southern Ontario historical maps"></iframe>
 ```
 
-## Historical York County, 1923.
+## Historical York County, 1923
 
 A georeferenced historical map of York County, Ontario, digitized from the University of Toronto Map and Data Library collection.
 
@@ -48,9 +54,9 @@ A georeferenced historical map of York County, Ontario, digitized from the Unive
 
 Other web mapping applications I have worked on include:
 
-## Local green space in my neighbourhood in Toronto.
+## Local green space in my neighbourhood in Toronto
 
-An ESRI story map incorporating map elements, text, and photos.
+A story map on the use and development projects occuring within a small green space I was very familiar with at the time, incorporating map elements I digitized and photos I took myself.
 
 ```{=html}
 <iframe src="https://storymaps.arcgis.com/stories/96512eb36b78413984c15506cd1b4f55" width="100%" height="700px" frameborder="0" allowfullscreen allow="geolocation"></iframe>
@@ -58,10 +64,9 @@ An ESRI story map incorporating map elements, text, and photos.
 
 ## Bicycle rack locations and reported bicycle thefts in Toronto.
 
-An instant app created for a course project.
+An instant app created for a course project, exploring scale-responsive data visualization.
 
 ```{=html}
 <iframe width="100%" height="700" src="https://utoronto.maps.arcgis.com/apps/instant/basic/index.html?appid=993887d367224628bda6246c22f0558e" title="Heat map of bicycle racks and reported bicycle thefts in Toronto"></iframe>
 ```
 
-# 

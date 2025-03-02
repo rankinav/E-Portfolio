@@ -10,6 +10,9 @@ The MGEM program covered a wide breadth of topics related to GIS, remote sensing
 
 ## Geographic Information Systems for Environmental Management
 
+A course on data analysis through a GIS, both applied skills in ArcGIS Pro and QGIS, as well as the theory underlying common data analysis workflows. This was the course that produced the most maps, with deliverables like the ones below also developing the underappreciated skill of making a good-looking map.
+Particularly interesting to me was the early emphasis on familiarity with relational database management, PostGIS databases, and GDAL, the building blocks of geographic information systems that many GIS courses I had taken previously glossed over or never mentioned. I appreciated the deeper understanding of how to directly interface with databases without relying on the comfortable interface of a GIS.
+
 ### Deliverable maps
 
 Mapping the impact of hydroelectric dams on salmon habitat access on Vancouver Island.
@@ -18,9 +21,49 @@ Mapping the impact of hydroelectric dams on salmon habitat access on Vancouver I
 
 ![](images/GEM510_Lab5.png)
 
+## Geospatial Data Analysis
+
+One of my favourite courses in the program, this was focused on introducing the basics of coding in Python, and how Python can be applied for geospatial projects both on its own and in conjunction with a GIS. Before this program, I was aware that Python was a powerful tool in this field but completely unfamiliar with it and unsure how to approach learning it. Gaining familiarity with Python as a language, its practices, and the wide array of relevant geospatial packages has been a very rewarding journey. Below is a section of code using the Arcpy package written to identify intersections of layers within a geodatabase and manipulate their attribute tables.
+
+```python
+for n in linefeatures:
+
+  ##outputs point feature class for each set of intersecting features
+  arcpy.analysis.Intersect(in_features=['hydroline', n], out_feature_class=f'{n}_intersection', output_type='POINT')
+  print(f'Creating {n}_intersection feature class')
+  
+  arcpy.management.AddFields(
+    in_table=f'{n}_intersection', 
+    ##adds fields for name and id
+    field_description=[
+        ['affected_name', 'TEXT'],
+        ['affected_id', 'SHORT']])
+  
+  ##update cursor looking at newly added fields
+  with arcpy.da.UpdateCursor(f'{n}_intersection', field_names=['affected_name', 'affected_id']) as cursor:
+    for row in cursor:
+        ##affected_name field set to feature name
+        row[0] = n
+        ##affected_id field set to counter value
+        row[1] = uniqueid
+        ##counter incremented
+        uniqueid += 1
+        cursor.updateRow(row)
+
+  print(f'Updating {n}_intersection feature class fields')
+```
+
+## Landscape Ecology
+
+The spatial turn in ecology has been described as a paradigm shift, as the importance of landscape features at varying scales has become increasingly clear. Landscape ecology projects like the proposal below connected landscape ecology concepts like ecological connectivity, landscape fragmentation, and species dispersal, with remote sensing techniques and data sources. This was one subfield of the program where I had previous experience from undergrad, and I found the projects to be a thorough and much-needed refresher on landscape ecology as well as inducing a new appreciation for how the concepts are relevant in a more traditional data-focused geospatial career.
+
+```{=html}
+ <iframe class="scribd_iframe_embed" title="Landscape Ecology project proposal" src="https://www.scribd.com/embeds/834039755/content?start_page=1&view_mode=scroll&access_key=key-2FnofZ53aiyZgWNgUf1g&scribd_rebrand=true" tabindex="0" data-auto-height="true" data-aspect-ratio="0.7729220222793488" scrolling="no" width="100%" height="600" frameborder="0" ></iframe> <p style="margin: 12px auto 6px auto; font-family: Helvetica,Arial,Sans-serif; font-size: 14px; line-height: normal; display: block;"> <a title="View Landscape Ecology project proposal on Scribd" href="https://www.scribd.com/document/834039755/Landscape-Ecology-project-proposal#from_embed" style="text-decoration: underline;"> Landscape Ecology project proposal </a> by <a title="View rankina001's profile on Scribd" href="https://www.scribd.com/user/842686140/rankina001#from_embed" style="text-decoration: underline;" > rankina001 </a> </p> 
+```
+ 
 ## Remote Sensing and Advanced Earth Observation
 
-Code snippet of a function to calculate reflectance in Landsat bandwidths from raw reflectance values.
+This course served double purpose as an intensive introduction to data processing, analysis, and visualization in R and as a thorough survey of the current state of remote sensing. Covering remote sensing from satellite imagery, aerial photography, radar, and LiDAR, the course also taught us practical coding skills to interpret these varied types of data. Below is a code snippet of a function to calculate reflectance in Landsat bandwidths from raw reflectance values written as part of a longer lab on hyperspectral data analysis.
 
 ``` r
 landsat_band <- function(df, lwr, upr, centre) { ##function to calculate each landsat band value
@@ -40,19 +83,11 @@ landsat_b3 <- landsat_band(spectra_mixed_wide, 630, 690, 660)
 landsat_b4 <- landsat_band(spectra_mixed_wide, 770, 900, 835) 
 landsat_b5 <- landsat_band(spectra_mixed_wide, 1550, 1750, 1650)
 landsat_b7 <- landsat_band(spectra_mixed_wide, 2090, 2350, 2220)
-```
-
-## Landscape Ecology
-
-A proposed project connecting landscape ecology concepts like ecological connectivity, landscape fragmentation, and species dispersal, with remote sensing techniques and data sources.
-
-```{=html}
- <iframe class="scribd_iframe_embed" title="Landscape Ecology project proposal" src="https://www.scribd.com/embeds/834039755/content?start_page=1&view_mode=scroll&access_key=key-2FnofZ53aiyZgWNgUf1g&scribd_rebrand=true" tabindex="0" data-auto-height="true" data-aspect-ratio="0.7729220222793488" scrolling="no" width="100%" height="600" frameborder="0" ></iframe> <p style="margin: 12px auto 6px auto; font-family: Helvetica,Arial,Sans-serif; font-size: 14px; line-height: normal; display: block;"> <a title="View Landscape Ecology project proposal on Scribd" href="https://www.scribd.com/document/834039755/Landscape-Ecology-project-proposal#from_embed" style="text-decoration: underline;"> Landscape Ecology project proposal </a> by <a title="View rankina001's profile on Scribd" href="https://www.scribd.com/user/842686140/rankina001#from_embed" style="text-decoration: underline;" > rankina001 </a> </p> 
-```
+``` 
  
 ## Professional Communication and Diverse Knowledge Systems
 
-A study of communication techniques utilized in a town hall meeting on a pressing Ontario environmental issue.
+This pair of courses focused on additional skills complementary to environmental management careers. In Professional Communication, projects often looked like the document below, a study of communication techniques utilized in a town hall meeting on a pressing Ontario environmental issue. We were encouraged to understand communication for different audiences from different demographics, the diversity of existing and potential negotiation techniques, and hwo our own positionality informs our communication. In Diverse Knowledge Systems we studied diverse ontologies with a frequent focus on Indigenous knowledge systems. One of the most rewarding parts of this course was hearing from Indigenous guest speakers with first-hand experience on conservation and environmental projects.
 
 ```{=html} 
 <iframe class="scribd_iframe_embed" title="FCOR510 Audience Analysis" src="https://www.scribd.com/embeds/834058303/content?start_page=1&view_mode=scroll&access_key=key-lVe7UjtI0rvUjWK1HQVy&scribd_rebrand=true" tabindex="0" data-auto-height="true" data-aspect-ratio="0.7729220222793488" scrolling="no" width="100%" height="600" frameborder="0" ></iframe> <p style="margin: 12px auto 6px auto; font-family: Helvetica,Arial,Sans-serif; font-size: 14px; line-height: normal; display: block;"> <a title="View FCOR510 Audience Analysis on Scribd" href="https://www.scribd.com/document/834058303/FCOR510-Audience-Analysis#from_embed" style="text-decoration: underline;"> FCOR510 Audience Analysis </a> by <a title="View rankina001's profile on Scribd" href="https://www.scribd.com/user/842686140/rankina001#from_embed" style="text-decoration: underline;" > rankina001 </a> </p> 
