@@ -1,7 +1,6 @@
 project:
   type: website
-  output-dir: C:/Users/rankinai.stu/OneDrive - UBC/Documents/GitHub/E-Portfolio-sample
-
+  output-dir: C:\Users\ranki\Documents\GitHub\E-Portfolio
 website:
   title: "Aidan's E-Portfolio"
   navbar:
