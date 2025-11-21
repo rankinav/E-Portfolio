@@ -2,7 +2,7 @@ project:
   type: website
   output-dir: C:\Users\ranki\Documents\GitHub\E-Portfolio
 website:
-  title: "Aidan Rankin"
+  title: "Aidan Villahermosa Rankin"
   navbar:
     right:
       - href: index.qmd
