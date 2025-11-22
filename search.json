@@ -4,14 +4,14 @@
     "href": "index.html",
     "title": "Aidan Villahermosa Rankin",
     "section": "",
-    "text": "Hi, I’m Aidan. I am a geographer and spatial scientist interested in applying GIS to solve all kinds of issues. Born and raised in Toronto, Ontario, I completed my Bachelor of Science in Biodiversity and Conservation Biology at the University of Toronto in 2023 with minors in GIS and philosophy. I then moved to Vancouver, BC, to expand my knowledge and skills in geomatics and remote sensing in the Master of Geomatics for Environmental Management program at the University of British Columbia. My focus during this graduate degree has been applications of remotely sensed data for ecological connectivity modelling, and how those models can inform conservation on a campus where humans and wildlife coexist."
+    "text": "Hi, I’m Aidan. I am a geographer and spatial scientist interested in applying GIS to solve all kinds of issues. Born and raised in Toronto, Ontario, I completed my Bachelor of Science in Biodiversity and Conservation Biology at the University of Toronto in 2023, with minors in GIS and philosophy. I then moved to Vancouver, BC, to expand my knowledge and skills in geospatial analysis in the Master of Geomatics for Environmental Management program at the University of British Columbia. My focus during this graduate degree has been applications of remotely sensed data for ecological connectivity modelling, and how those models can inform conservation on a campus where humans and wildlife coexist.\n\n\nReuseCC BY-SA 4.0"
   },
   {
     "objectID": "resume.html",
     "href": "resume.html",
-    "title": "Resume",
+    "title": "CV",
     "section": "",
-    "text": "GIS Resume 2023  by  rankina001"
+    "text": "Master of Geomatics for Environmental Management\n2025\n\n\nUniversity of British Columbia\nRelevant courses:\n\n\n\nHonours Bachelor of Science, Biodiversity and Conservation Biology\n2023\n\n\nUniversity of Toronto\nMinors in Geographic Information Systems, Philosophy"
   },
   {
     "objectID": "publications.html",
@@ -327,5 +327,19 @@
     "title": "Other work",
     "section": "Local green space in my neighbourhood in Toronto",
     "text": "Local green space in my neighbourhood in Toronto\nA story map on the use and development projects occuring within a small green space I was very familiar with at the time, incorporating map elements I digitized and photos I took myself."
+  },
+  {
+    "objectID": "resume.html#education",
+    "href": "resume.html#education",
+    "title": "CV",
+    "section": "",
+    "text": "Master of Geomatics for Environmental Management\n2025\n\n\nUniversity of British Columbia\nRelevant courses:\n\n\n\nHonours Bachelor of Science, Biodiversity and Conservation Biology\n2023\n\n\nUniversity of Toronto\nMinors in Geographic Information Systems, Philosophy"
+  },
+  {
+    "objectID": "resume.html#work-experience",
+    "href": "resume.html#work-experience",
+    "title": "CV",
+    "section": "Work experience",
+    "text": "Work experience\n   GIS Resume 2023  by  rankina001"
   }
 ]

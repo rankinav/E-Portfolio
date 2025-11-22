@@ -69,4 +69,3 @@ An instant app created for a course project, exploring scale-responsive data vis
 ```{=html}
 <iframe width="100%" height="700" src="https://utoronto.maps.arcgis.com/apps/instant/basic/index.html?appid=993887d367224628bda6246c22f0558e" title="Heat map of bicycle racks and reported bicycle thefts in Toronto"></iframe>
 ```
-

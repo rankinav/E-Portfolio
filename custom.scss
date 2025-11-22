@@ -1,0 +1,29 @@
+/*-- scss:defaults --*/
+
+$bg_colour:       #f3f4f6 !default;
+$em_colour:     #ebddb6 !default;
+
+$toc-color: black !default;
+
+$navbar-bg: $em_colour !default;
+$navbar-fg: black !default;
+
+
+/*-- scss:rules --*/
+body {
+  background-color: $bg_colour;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+  line-height: 1.6em;
+}
+
+/**  #quarto-content {
+  div {
+    border-style: solid;
+    border-width: 0.1em;
+    border-color: black;
+  } 
+  } **/

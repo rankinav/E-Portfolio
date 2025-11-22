@@ -8,7 +8,7 @@ website:
       - href: index.qmd
         text: Home
       - href: resume.qmd
-        text: Resume
+        text: CV
       - href: project.qmd
         text: Capstone project
       - href: content.qmd
@@ -18,9 +18,14 @@ website:
 
 format:
   html:
-    theme: jekyll-theme-cayman
-    css: styles.css
+    theme: 
+      - brite
+      - custom.scss
+    email-obfuscation: javascript
     toc: true
+    link-external-newwindow: true
+    license: "CC BY-SA"
+
 
 editor: visual
 
